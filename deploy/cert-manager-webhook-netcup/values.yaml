@@ -6,14 +6,15 @@
 # solve the DNS01 challenge.
 # This group name should be **unique**, hence using your own company's domain
 # here is recommended.
-groupName: acme.mycompany.com
+
+groupName: com.netcup.webhook
 
 certManager:
   namespace: cert-manager
   serviceAccountName: cert-manager
 
 image:
-  repository: mycompany/webhook-image
+  repository: elvino76/cert-manager-webhook-netcup
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -24,7 +25,8 @@ service:
   type: ClusterIP
   port: 443
 
-resources: {}
+resources:
+  {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following

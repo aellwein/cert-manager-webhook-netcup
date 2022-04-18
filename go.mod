@@ -1,4 +1,4 @@
-module github.com/cert-manager/webhook-example
+module github.com/aellwein/cert-manager-webhook-netcup
 
 go 1.17
 

@@ -1,0 +1,76 @@
+---
+# Create a selfsigned Issuer, in order to create a root CA certificate for
+# signing webhook serving certificates
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: {{ include "cert-manager-webhook-netcup.selfSignedIssuer" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ include "cert-manager-webhook-netcup.name" . }}
+    chart: {{ include "cert-manager-webhook-netcup.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  selfSigned: {}
+
+---
+
+# Generate a CA Certificate used to sign certificates for the webhook
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "cert-manager-webhook-netcup.rootCACertificate" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ include "cert-manager-webhook-netcup.name" . }}
+    chart: {{ include "cert-manager-webhook-netcup.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  secretName: {{ include "cert-manager-webhook-netcup.rootCACertificate" . }}
+  duration: 43800h # 5y
+  issuerRef:
+    name: {{ include "cert-manager-webhook-netcup.selfSignedIssuer" . }}
+  commonName: "ca.cert-manager-webhook-netcup.cert-manager"
+  isCA: true
+
+---
+
+# Create an Issuer that uses the above generated CA certificate to issue certs
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: {{ include "cert-manager-webhook-netcup.rootCAIssuer" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ include "cert-manager-webhook-netcup.name" . }}
+    chart: {{ include "cert-manager-webhook-netcup.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  ca:
+    secretName: {{ include "cert-manager-webhook-netcup.rootCACertificate" . }}
+
+---
+
+# Finally, generate a serving certificate for the webhook to use
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ include "cert-manager-webhook-netcup.servingCertificate" . }}
+  namespace: {{ .Release.Namespace | quote }}
+  labels:
+    app: {{ include "cert-manager-webhook-netcup.name" . }}
+    chart: {{ include "cert-manager-webhook-netcup.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  secretName: {{ include "cert-manager-webhook-netcup.servingCertificate" . }}
+  duration: 8760h # 1y
+  issuerRef:
+    name: {{ include "cert-manager-webhook-netcup.rootCAIssuer" . }}
+  dnsNames:
+  - {{ include "cert-manager-webhook-netcup.fullname" . }}
+  - {{ include "cert-manager-webhook-netcup.fullname" . }}.{{ .Release.Namespace }}
+  - {{ include "cert-manager-webhook-netcup.fullname" . }}.{{ .Release.Namespace }}.svc
