@@ -4,9 +4,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/aellwein/cert-manager-webhook-netcup/example"
 	"github.com/jetstack/cert-manager/test/acme/dns"
-
-	"github.com/cert-manager/webhook-example/example"
 )
 
 var (

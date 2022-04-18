@@ -1,7 +1,7 @@
 OS ?= $(shell go env GOOS)
 ARCH ?= $(shell go env GOARCH)
 
-IMAGE_NAME := "webhook"
+IMAGE_NAME := "elvino76/cert-manager-webhook-netcup"
 IMAGE_TAG := "latest"
 
 OUT := $(shell pwd)/_out
@@ -25,6 +25,7 @@ _test/kubebuilder:
 	rm -R kubebuilder
 
 clean: clean-kubebuilder
+	$(RM) cert-manager-webhook-netcup
 
 clean-kubebuilder:
 	rm -Rf _test/kubebuilder
