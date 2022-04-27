@@ -59,7 +59,7 @@ func (n *netcupDNSProviderSolver) Present(ch *v1alpha1.ChallengeRequest) error {
 	if err != nil {
 		return err
 	}
-	if err := addOrDeleteTxtRecord(cfg, ch.ResolvedFQDN, ch.DNSName, ch.Key, false); err != nil {
+	if err := addOrDeleteTxtRecord(cfg, ch.ResolvedFQDN, ch.Key, false); err != nil {
 		return err
 	}
 	klog.Infof("successfully presented challenge for domain '%s'", ch.DNSName)
@@ -71,7 +71,7 @@ func (n *netcupDNSProviderSolver) CleanUp(ch *v1alpha1.ChallengeRequest) error {
 	if err != nil {
 		return err
 	}
-	if err := addOrDeleteTxtRecord(cfg, ch.ResolvedFQDN, ch.DNSName, ch.Key, true); err != nil {
+	if err := addOrDeleteTxtRecord(cfg, ch.ResolvedFQDN, ch.Key, true); err != nil {
 		return err
 	}
 	klog.Infof("successfully cleaned up challenge for domain '%s'", ch.DNSName)
@@ -127,7 +127,14 @@ func (n *netcupDNSProviderSolver) getConfig(ch *v1alpha1.ChallengeRequest) (*net
 	return netcupCfg, nil
 }
 
-func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, dnsName string, key string, delete bool) error {
+func reverseArray(arr []string) []string {
+	for i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {
+		arr[i], arr[j] = arr[j], arr[i]
+	}
+	return arr
+}
+
+func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, key string, delete bool) error {
 	netcupClient := netcup.NewNetcupDnsClient(cfg.customerNumber, cfg.apiKey, cfg.apiPassword)
 	sess, err := netcupClient.Login()
 	if err != nil {
@@ -135,14 +142,24 @@ func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, dnsName 
 	}
 	defer sess.Logout()
 
-	recs, err := sess.InfoDnsRecords(dnsName)
+	splitDomainName := strings.Split(strings.TrimSuffix(resolvedFqdn, "."), ".")
+	host := ""
+	if len(splitDomainName) == 4 {
+		host = strings.Join(splitDomainName[0:2], ".")
+	} else {
+		host = splitDomainName[0]
+	}
+	lastTwoSegments := reverseArray(reverseArray(splitDomainName)[0:2])
+	domain := strings.Join(lastTwoSegments, ".")
+
+	recs, err := sess.InfoDnsRecords(domain)
 	if err != nil {
-		return fmt.Errorf("unable to get DNS records for domain '%s': %v", dnsName, err)
+		return fmt.Errorf("unable to get DNS records for domain '%s': %v", resolvedFqdn, err)
 	}
 	var foundRec *netcup.DnsRecord
 	for _, rec := range *recs {
 		// record already exists?
-		if strings.HasPrefix(resolvedFqdn, rec.Hostname) && rec.Type == "TXT" {
+		if strings.HasPrefix(host, rec.Hostname) && rec.Type == "TXT" {
 			foundRec = &rec
 			break
 		}
@@ -165,7 +182,7 @@ func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, dnsName 
 		}
 		foundRec = &netcup.DnsRecord{
 			Id:           "",
-			Hostname:     resolvedFqdn,
+			Hostname:     host,
 			Type:         "TXT",
 			Priority:     "",
 			Destination:  key,
@@ -173,7 +190,7 @@ func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, dnsName 
 			State:        "yes",
 		}
 	}
-	if _, err := sess.UpdateDnsRecords(dnsName, &[]netcup.DnsRecord{*foundRec}); err != nil {
+	if _, err := sess.UpdateDnsRecords(domain, &[]netcup.DnsRecord{*foundRec}); err != nil {
 		return fmt.Errorf("failed to set TXT record for domain '%s': %v, record to set: %v", resolvedFqdn, err, foundRec)
 	}
 	return nil
