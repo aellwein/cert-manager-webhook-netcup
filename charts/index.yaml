@@ -2,12 +2,21 @@ apiVersion: v1
 entries:
   cert-manager-webhook-netcup:
   - apiVersion: v1
+    appVersion: 1.0.1
+    created: "2022-05-09T19:04:45.267035+02:00"
+    description: Allow cert-manager to solve DNS challenges using Netcup DNS API
+    digest: bb782e73538a4a16007a85cd66aadad21afdcc77ddcc3dfedde0284c67904b51
+    name: cert-manager-webhook-netcup
+    urls:
+    - cert-manager-webhook-netcup-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
     appVersion: 1.0.0
-    created: "2022-04-18T20:09:02.335641+02:00"
+    created: "2022-05-09T19:04:45.266603+02:00"
     description: Allow cert-manager to solve DNS challenges using Netcup DNS API
     digest: a052b26189dce9f8f93b0d7e93fe2dcf961e82f446e99b535760c408ad15c724
     name: cert-manager-webhook-netcup
     urls:
     - cert-manager-webhook-netcup-1.0.0.tgz
     version: 1.0.0
-generated: "2022-04-18T20:09:02.335004+02:00"
+generated: "2022-05-09T19:04:45.265993+02:00"
