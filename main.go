@@ -138,7 +138,7 @@ func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, key stri
 
 	rePattern := regexp.MustCompile(`^(.+)\.(([^\.]+)\.([^\.]+))\.$`)
 	match := rePattern.FindStringSubmatch(resolvedFqdn)
-	if match != nil {
+	if match == nil {
 		return fmt.Errorf("unable to parse host/domain out of resolved FQDN ('%s')", resolvedFqdn)
 	}
 	host := match[1]
