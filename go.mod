@@ -124,3 +124,9 @@ replace (
 	go.opentelemetry.io/otel/trace => go.opentelemetry.io/otel/trace v0.20.0
 	go.opentelemetry.io/proto/otlp => go.opentelemetry.io/proto/otlp v0.7.0
 )
+
+// CVE-2022-29526
+replace golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 => golang.org/x/sys v0.0.0-20220817070843-5a390386f1f2
+
+// CVE-2022-1996
+replace github.com/emicklei/go-restful v2.9.5+incompatible => github.com/emicklei/go-restful v2.16.0+incompatible
