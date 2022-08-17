@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/aellwein/cert-manager-webhook-netcup/example"
-	"github.com/jetstack/cert-manager/test/acme/dns"
+	"github.com/cert-manager/cert-manager/test/acme/dns"
 )
 
 var (
