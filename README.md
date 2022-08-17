@@ -30,11 +30,11 @@ spec:
     solvers:
     - dns01:
         webhook:
-        groupName: com.netcup.webhook
-        solverName: netcup
-        config:
-            secretRef: netcup-secret
-            secretNamespace: cert-manager
+            groupName: com.netcup.webhook
+            solverName: netcup
+            config:
+                secretRef: netcup-secret
+                secretNamespace: cert-manager
 ```
 For more details, please refer to https://cert-manager.io/docs/configuration/acme/dns01/#configuring-dns01-challenge-provider
 
