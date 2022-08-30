@@ -9,8 +9,9 @@ for configuration and more details.
 Release
 -------
 
-* Run this directory:
-  ```
-  helm package ../deploy/cert-manager-webhook-netcup && helm repo index .
-  ```
-* Add build artifact and index.yaml to git and commit to this branch.
+  * Run this directory:
+    ```
+    helm package ../deploy/cert-manager-webhook-netcup && helm repo index .
+    ```
+  * Add build artifact and index.yaml to git and commit to this branch.
+
