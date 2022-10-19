@@ -15,7 +15,7 @@ certManager:
 
 image:
   repository: elvino76/cert-manager-webhook-netcup
-  tag: 1.0.5
+  tag: develop
   pullPolicy: IfNotPresent
 
 nameOverride: ""

@@ -2,7 +2,7 @@ OS ?= $(shell go env GOOS)
 ARCH ?= $(shell go env GOARCH)
 
 IMAGE_NAME := "elvino76/cert-manager-webhook-netcup"
-IMAGE_TAG := "1.0.7"
+IMAGE_TAG := "develop"
 
 OUT := $(shell pwd)/_out
 
@@ -32,6 +32,10 @@ clean-kubebuilder:
 
 build-and-push:
 	docker buildx build --platform linux/arm/v7,linux/amd64,linux/arm64/v8,linux/ppc64le,linux/s390x \
+		-t $(IMAGE_NAME):$(IMAGE_TAG) . --push
+
+build-local:
+	docker buildx build --platform linux/amd64 \
 		-t $(IMAGE_NAME):$(IMAGE_TAG) . --push
 
 .PHONY: rendered-manifest.yaml
