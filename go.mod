@@ -75,16 +75,15 @@ require (
 	go.uber.org/multierr v1.6.0 // indirect
 	go.uber.org/zap v1.19.1 // indirect
 	golang.org/x/crypto v0.0.0-20220411220226-7b82a4e95df4 // indirect
-	golang.org/x/mod v0.6.0-dev.0.20220106191415-9b9b3d81d5e3 // indirect
-	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
+	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4 // indirect
 	golang.org/x/sys v0.0.0-20220728004956-3c1f35247d10 // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/time v0.0.0-20220210224613-90d013bbcef8 // indirect
-	golang.org/x/tools v0.1.10 // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
+	golang.org/x/tools v0.1.12 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20220118154757-00ab72f36ad5 // indirect
 	google.golang.org/grpc v1.43.0 // indirect
@@ -132,4 +131,7 @@ replace golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 => golang.org/x/sys 
 replace github.com/emicklei/go-restful v2.9.5+incompatible => github.com/emicklei/go-restful v2.16.0+incompatible
 
 // CVE-2022-27664
-replace golang.org/x/net v0.0.0-20220225172249-27dd8689420f => golang.org/x/net v0.0.0-20220909164309-bea034e7d591
+replace golang.org/x/net v0.0.0-20220722155237-a158d28d115b => golang.org/x/net v0.0.0-20220909164309-bea034e7d591
+
+// CVE-2022-32149
+replace golang.org/x/text v0.3.7 => golang.org/x/text v0.4.0

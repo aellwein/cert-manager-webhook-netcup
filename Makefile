@@ -2,7 +2,7 @@ OS ?= $(shell go env GOOS)
 ARCH ?= $(shell go env GOARCH)
 
 IMAGE_NAME := "elvino76/cert-manager-webhook-netcup"
-IMAGE_TAG := "develop"
+IMAGE_TAG := "1.0.8"
 
 OUT := $(shell pwd)/_out
 
