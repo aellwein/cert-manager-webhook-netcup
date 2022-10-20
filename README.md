@@ -4,7 +4,7 @@ cert-manager-webhook-netcup
 ===========================
 
 [cert-manager](https://cert-manager.io) webhook implementation for use
-with [Netcup](https://www.netcup.eu) provider for solving [ACME DNS-01 
+with [Netcup](https://www.netcup.eu) provider for solving [ACME DNS-01
 challenges](https://cert-manager.io/docs/configuration/acme/dns01/).
 
 Usage
@@ -18,8 +18,8 @@ You can do it like following, just place the correct values in the command:
 ```sh
 kubectl create secret generic netcup-secret -n cert-manager --from-literal=customer-number=<your-customer-number> --from-literal=api-key=<api-key-from-netcup-dashboard> --from-literal=api-password=<api-password-from-netcup-dashboard>
 ```
-After creating the secret, configure the ``Issuer``/``ClusterIssuer`` of 
-yours to have the following configuration (as assumed, secret is 
+After creating the secret, configure the ``Issuer``/``ClusterIssuer`` of
+yours to have the following configuration (as assumed, secret is
 called "netcup-secret" and located in namespace "cert-manager"):
 
 ```yml
@@ -51,7 +51,7 @@ the DNS01 challenges using ``cert-manager-webhook-netcup``.
 Disclaimer
 ----------
 
-I am in no way affiliated or associated with Netcup and this project 
+I am in no way affiliated or associated with Netcup and this project
 is done in my spare time.
 
 
