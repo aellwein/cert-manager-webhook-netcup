@@ -16,6 +16,8 @@ certManager:
 image:
   repository: elvino76/cert-manager-webhook-netcup
   tag: 1.0.8
+  # sha hash can be used to specify image version, instead of tag
+  hash: ""
   pullPolicy: IfNotPresent
 
 nameOverride: ""

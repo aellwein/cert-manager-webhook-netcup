@@ -46,3 +46,11 @@ Create chart name and version as used by the chart label.
 {{- define "cert-manager-webhook-netcup.servingCertificate" -}}
 {{ printf "%s-webhook-tls" (include "cert-manager-webhook-netcup.fullname" .) }}
 {{- end -}}
+
+{{- define "cert-manager-webhook-netcup.fullImageName" -}}
+{{- if empty .Values.image.hash -}}
+{{ printf "%s:%s" .Values.image.repository .Values.image.tag }}
+{{- else -}}
+{{ printf "%s@%s" .Values.image.repository .Values.image.hash }}
+{{- end -}}
+{{- end -}}

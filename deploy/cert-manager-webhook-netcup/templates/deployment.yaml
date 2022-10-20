@@ -22,7 +22,7 @@ spec:
       serviceAccountName: {{ include "cert-manager-webhook-netcup.fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ include "cert-manager-webhook-netcup.fullImageName" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
             - --tls-cert-file=/tls/tls.crt
