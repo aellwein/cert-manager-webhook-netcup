@@ -17,5 +17,8 @@ annotations:
   artifacthub.io/maintainers: |
     - name: Alex Ellwein
       email: alex.ellwein@gmail.com
-  #artifacthub.io/containsSecurityUpdates: "true"
-  #artifacthub.io/changes:
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/changes: |
+    - Mitigation for CVE-2022-32149
+    - README and annotations in chart for ArtifactHub
+    - Possibility to use digest (image hash) in values.yml
