@@ -1,6 +1,6 @@
 apiVersion: v1
-appVersion: "1.0.9"
-version: 1.0.9
+appVersion: "1.0.10"
+version: 1.0.10
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
 home: https://github.com/aellwein/cert-manager-webhook-netcup
@@ -19,6 +19,5 @@ annotations:
       email: alex.ellwein@gmail.com
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - Mitigation for CVE-2022-32149
-    - README and annotations in chart for ArtifactHub
-    - Possibility to use digest (image hash) in values.yml
+    - Use updated deps to mitigate [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717)
+    - Use Go 1.19 and alpine 3.17 Docker image
