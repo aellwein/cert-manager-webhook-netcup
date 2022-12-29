@@ -9,10 +9,10 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.4.2
+        uses: actions/checkout@v3
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PAT }}
@@ -20,6 +20,13 @@ jobs:
       - name: Preapre new buildx context
         run: docker buildx create --use
 
-      - name: Build & push Docker image
+      - name: Build & push Docker image (all architectures)
+        if: github.ref == 'refs/heads/master'
         run: |
           make build-and-push
+
+      - name: Build & push Docker image (amd64 only for develop)
+        # only build amd64 version on develop to speed things up
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          make build-local
