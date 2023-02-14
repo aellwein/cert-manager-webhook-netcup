@@ -1,6 +1,6 @@
 apiVersion: v1
-appVersion: "1.0.11"
-version: 1.0.11
+appVersion: "1.0.12"
+version: 1.0.12
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
 home: https://github.com/aellwein/cert-manager-webhook-netcup
@@ -19,4 +19,37 @@ annotations:
       email: alex.ellwein@gmail.com
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - Use updated base Docker image (alpine 3.17.1) mitigate [CVE-2022-3996](https://github.com/advisories/GHSA-vr8j-hgmm-jh9r)
+    - kind: added
+      description: "Use updated base Docker image (alpine 3.17.2) to mitigate CVEs in openssl and libcrypto3"
+    - kind: fixed
+      description: "openssl CVE-2023-0286"
+    - kind: fixed
+      description: "openssl CVE-2022-4304"
+    - kind: fixed
+      description: "openssl CVE-2022-4203"
+    - kind: fixed
+      description: "openssl CVE-2023-0215"
+    - kind: fixed
+      description: "openssl CVE-2022-4450"
+    - kind: fixed
+      description: "openssl CVE-2023-0216"
+    - kind: fixed
+      description: "openssl CVE-2023-0217"
+    - kind: fixed
+      description: "openssl CVE-2023-0401"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0286"
+    - kind: fixed
+      description: "libcrypto3 CVE-2022-4203"
+    - kind: fixed
+      description: "libcrypto3 CVE-2022-4304"
+    - kind: fixed
+      description: "libcrypto3 CVE-2022-4450"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0215"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0216"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0217"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0401"
