@@ -21,5 +21,11 @@ jobs:
         run: docker buildx create --use
 
       - name: Build & push Docker image (all architectures)
+        if: github.ref == 'refs/heads/master'
         run: |
           make build-and-push
+
+      - name: Build & push Docker image (amd64 only for develop)
+        if: github.ref == 'refs/heads/develop'
+        run: |
+          make build-local
