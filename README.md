@@ -1,4 +1,4 @@
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/cert-manager-webhook-netcup)](https://artifacthub.io/packages/search?repo=cert-manager-webhook-netcup)
+[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/cert-manager-webhook-netcup)](https://artifacthub.io/packages/helm/cert-manager-webhook-netcup/cert-manager-webhook-netcup)
 
 cert-manager-webhook-netcup
 ===========================
