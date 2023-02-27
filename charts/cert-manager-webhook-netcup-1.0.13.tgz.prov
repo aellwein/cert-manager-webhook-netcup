@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "bump dependencies"
+    - kind: fixed
+      description: "upgrade golang.org/x/net to 0.7.0 to mitigate CVE-2022-41723"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.13
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.13
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.13.tgz: sha256:b4d02ef89589f4eddd9b2085af01be1eb6f08c1e42747b0f02de6a69435a41c7
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmP8+x8ACgkQV/husVzF
+n5b6QBAAl2jAFwmI0FKKKYCTQBK1G8fRUuo9SBIQHtYQyh3aY7anOqYcuKW8KZd0
+mtgVcgUWRku3uivxP4owjfbdFCwlpAkPBFgOIyExAdf3z6I9RHFb5mthrj2sbUAl
+O6ztQvN/pQ01uip7eY+e6hVh4R7T/soLZaAktZOTkW47JtiZWXFBxrI97UZTIIhR
+nSLnEWrvyMVDGSWS0ZzifV0KoVlL1EtjISFe6bsAaVamLzxTs3p72U0bxlcIn+VF
+xYOB0Qx5uPztB/zLVA1vs93KsOUxg3srJLhGxzDVocsmsXHM0KuRhHTIeDi3CI8x
+btS+qTkwxLKFr64q8ApY9k3FfugxCqp+auFFjbNtFq0QqQIsB2avkg6NafVRnX2Q
+MfZp7s8J8teqqc4x8ku1lWkKtPCpNEsS2jyYRL/ZUIwW7d26PQjzEVoRLh6IBTam
+YMhH16XeY+lVug9ezVleD1DigOVfeODsQquT+ssMhmYGFBerRoiVNHlvxr54X8R5
+VXKjZKUW/B9JU0wt0UFgi/LP5ptLZKgpKagqVCNcfL2Q3f+PSUN1CPdH/aUDe1ju
+/txhpGbX+gUzW1QWr3t6OH7OtLljU6v0w2EEXnrcAQyFp431U5JJo9sHd7XoPGRr
+/mMpmNI755lCR7j6U5vf7So73gifRyeiuY0PZ6MifDkIVPg0Meg=
+=bPyM
+-----END PGP SIGNATURE-----

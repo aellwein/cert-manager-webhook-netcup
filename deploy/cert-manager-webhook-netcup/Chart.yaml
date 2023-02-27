@@ -23,3 +23,6 @@ annotations:
       description: "bump dependencies"
     - kind: fixed
       description: "upgrade golang.org/x/net to 0.7.0 to mitigate CVE-2022-41723"
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc

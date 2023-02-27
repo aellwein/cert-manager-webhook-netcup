@@ -1,0 +1,48 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - Mitigation for CVE-2022-32149
+    - README and annotations in chart for ArtifactHub
+    - Possibility to use digest (image hash) in values.yml
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+apiVersion: v1
+appVersion: 1.0.9
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.9
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.9.tgz: sha256:d3b6eab27e21af3ae6fb5473e4b0e5db8d75c95bf5ee9b7f1b2e25e98b488bd3
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmP8+yQACgkQV/husVzF
+n5aJJw//fm93CE052WvWu1XSU3/mfILO7cnmiDRHwaBEwipWUGDTdCbCpCJbWoII
+EVQ5IUHNw1kQDcecRfxIGt8A+0HBXOqb2X+EG7y6waN5By6Min6EZdC5EINrih5P
+5hUYpi8RcZmNwxlT2NAI4Y+6AWOmUWCXbOoElRzExL4bhHn8VoiD6NAM8PA1i6Qn
+iaXmLEkam6vmn8cyEAXDAgygVvs2Hw+aEYKsvrXDb5iaailALaVicoMC+kG+QnHJ
+pdMcduij60GIdMcJ1yTNRc7l4hZ02koSc5SA2nR539EmS1dotTfv7sQz5VKpddXH
+ac0wJVebzZzauTNxLjIsGxl+23pGeaQYkf1Wx5FP/3FDoMuQNM6Nkd3SAeWs0fyz
+HoOQcRLTkMDJsi3YNKJGtiKQsQ1sVo4uOVNOubecgPYYoWfoXpAtoM3/3pBvQhbH
+C5FLyPDA7DIm45pPjtzHkFXCFEjAeMrXIkDXX8EEfog6XBh9KFpqgjMv4UTsGT1F
+zqN/J53kMbunyBNvfEbvdPItW897DLy4XW+Syws/oV4QUItTbKY028mojjr/vGgA
+Atp2QTAoYW3f8a6aQ6Optw5wavPmBpkIYlFiyCRK+cpWRLD7Qbs5k2r6W1PNwBDs
+ipWIOS/IJrPmJ0OyCZucZUxqhxKxue7IJwJtVrodTKJPbyDWq8U=
+=tulJ
+-----END PGP SIGNATURE-----

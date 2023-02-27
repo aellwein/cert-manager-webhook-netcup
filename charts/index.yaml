@@ -12,12 +12,15 @@ entries:
       artifacthub.io/maintainers: |
         - name: Alex Ellwein
           email: alex.ellwein@gmail.com
+      artifacthub.io/signKey: |
+        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+        url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.13
-    created: "2023-02-19T11:57:53.986508+01:00"
+    created: "2023-02-27T19:49:10.646437+01:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
-    digest: aacbab905a72529e0843ef24105ad3084ed3848711d2b65210d3dfc134e83df6
+    digest: b4d02ef89589f4eddd9b2085af01be1eb6f08c1e42747b0f02de6a69435a41c7
     home: https://github.com/aellwein/cert-manager-webhook-netcup
     icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
     keywords:
@@ -72,9 +75,12 @@ entries:
       artifacthub.io/maintainers: |
         - name: Alex Ellwein
           email: alex.ellwein@gmail.com
+      artifacthub.io/signKey: |
+        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+        url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.12
-    created: "2023-02-19T11:57:53.986233+01:00"
+    created: "2023-02-27T19:49:10.646145+01:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: bede761557c38f373c3923f9d9128f77c8fc32d2b1d79f1fda4cb548c031f62d
@@ -99,9 +105,12 @@ entries:
       artifacthub.io/maintainers: |
         - name: Alex Ellwein
           email: alex.ellwein@gmail.com
+      artifacthub.io/signKey: |
+        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+        url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.11
-    created: "2023-02-19T11:57:53.985726+01:00"
+    created: "2023-02-27T19:49:10.645868+01:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: aa66de90af78012c0521d3ec48265746ee97f26640248e4b68328331c4ce6f2d
@@ -127,9 +136,12 @@ entries:
       artifacthub.io/maintainers: |
         - name: Alex Ellwein
           email: alex.ellwein@gmail.com
+      artifacthub.io/signKey: |
+        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+        url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.10
-    created: "2023-02-19T11:57:53.985361+01:00"
+    created: "2023-02-27T19:49:10.645598+01:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: f6ec08186bf14c204eef0971e9c84545b5a8bb3d455d7cdcca488ddc71830695
@@ -156,9 +168,12 @@ entries:
       artifacthub.io/maintainers: |
         - name: Alex Ellwein
           email: alex.ellwein@gmail.com
+      artifacthub.io/signKey: |
+        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+        url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.9
-    created: "2023-02-19T11:57:53.989143+01:00"
+    created: "2023-02-27T19:49:10.648203+01:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: d3b6eab27e21af3ae6fb5473e4b0e5db8d75c95bf5ee9b7f1b2e25e98b488bd3
@@ -177,7 +192,7 @@ entries:
     version: 1.0.9
   - apiVersion: v1
     appVersion: 1.0.8
-    created: "2023-02-19T11:57:53.988778+01:00"
+    created: "2023-02-27T19:49:10.647871+01:00"
     description: Allow cert-manager to solve DNS challenges using Netcup DNS API
     digest: 4b1c49ef9ab1c57428cff35824dd7cb13f187af74fa7dcd560dd788aa0dce892
     name: cert-manager-webhook-netcup
@@ -186,7 +201,7 @@ entries:
     version: 1.0.8
   - apiVersion: v1
     appVersion: 1.0.7
-    created: "2023-02-19T11:57:53.98849+01:00"
+    created: "2023-02-27T19:49:10.647667+01:00"
     description: Allow cert-manager to solve DNS challenges using Netcup DNS API
     digest: 0d262079f7326e41020df239298f5106bebaf9d797a9ce61550caa6457237a69
     name: cert-manager-webhook-netcup
@@ -195,7 +210,7 @@ entries:
     version: 1.0.7
   - apiVersion: v1
     appVersion: 1.0.6
-    created: "2023-02-19T11:57:53.987454+01:00"
+    created: "2023-02-27T19:49:10.647442+01:00"
     description: Allow cert-manager to solve DNS challenges using Netcup DNS API
     digest: f1eb0f11758d480a6fa187a54cdca8669b1ccdb75f022b53d84253723827b7c7
     name: cert-manager-webhook-netcup
@@ -204,7 +219,7 @@ entries:
     version: 1.0.6
   - apiVersion: v1
     appVersion: 1.0.5
-    created: "2023-02-19T11:57:53.987202+01:00"
+    created: "2023-02-27T19:49:10.647058+01:00"
     description: Allow cert-manager to solve DNS challenges using Netcup DNS API
     digest: 24df7547c2509b06972440c318a22e7e62c0c00c55a796b2c71b70c2e6a1f9bf
     name: cert-manager-webhook-netcup
@@ -213,11 +228,11 @@ entries:
     version: 1.0.5
   - apiVersion: v1
     appVersion: 1.0.3
-    created: "2023-02-19T11:57:53.986855+01:00"
+    created: "2023-02-27T19:49:10.646641+01:00"
     description: Allow cert-manager to solve DNS challenges using Netcup DNS API
     digest: 03f7f124bb6d76a606a9ed598466b1f4aa422c4406bde52cfff1202a209cd9fd
     name: cert-manager-webhook-netcup
     urls:
     - cert-manager-webhook-netcup-1.0.3.tgz
     version: 1.0.3
-generated: "2023-02-19T11:57:53.984858+01:00"
+generated: "2023-02-27T19:49:10.645223+01:00"

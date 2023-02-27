@@ -1,0 +1,79 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: "Use updated base Docker image (alpine 3.17.2) to mitigate CVEs in openssl and libcrypto3"
+    - kind: fixed
+      description: "openssl CVE-2023-0286"
+    - kind: fixed
+      description: "openssl CVE-2022-4304"
+    - kind: fixed
+      description: "openssl CVE-2022-4203"
+    - kind: fixed
+      description: "openssl CVE-2023-0215"
+    - kind: fixed
+      description: "openssl CVE-2022-4450"
+    - kind: fixed
+      description: "openssl CVE-2023-0216"
+    - kind: fixed
+      description: "openssl CVE-2023-0217"
+    - kind: fixed
+      description: "openssl CVE-2023-0401"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0286"
+    - kind: fixed
+      description: "libcrypto3 CVE-2022-4203"
+    - kind: fixed
+      description: "libcrypto3 CVE-2022-4304"
+    - kind: fixed
+      description: "libcrypto3 CVE-2022-4450"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0215"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0216"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0217"
+    - kind: fixed
+      description: "libcrypto3 CVE-2023-0401"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+apiVersion: v1
+appVersion: 1.0.12
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.12
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.12.tgz: sha256:bede761557c38f373c3923f9d9128f77c8fc32d2b1d79f1fda4cb548c031f62d
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmP8+yAACgkQV/husVzF
+n5YkeA//UPm257Y6UM4DvcHRf+YGCD03hNxeUylcDZJNjFKrcN4u9tHxHAHepgUT
+p7ZAjhUD8O/cENecBHr+Y4msjPriTyK2f970S+Id9+gZi+LmZVAieI2Viv6vzs6a
+PxoBSe4oRmEz0zWDbddJtPcHlxugw2Or/iarF18DtznAODWKKk76TTzHg883F5Pc
+2m3xKhjSNWRAyoj1jBszuJodHu2TO2W3GRoRP1SNI/Srqc3grGbD48pYp0MoFb46
+zHZj8T5E9ItE1MnpFUY9zjkkI80OQWuyPvd/Z84eIoHQIg7ikrj/Y2qWLE7RClXs
+Pj5JMJLgxzKkJWQYvpYMfScUdYf8iPmDGwFAmrVMcg1bkc723AqHQk9DnPWLCuq2
+UeTIN1/VQ+Vu5kiyQPfhQ9uX7AkPr7LetlnGz1RPmeezCdxO1sPFWzuuHyibQ5fo
+QBVlcsGj7Mv6LdDq57W5rqxOHLvCy6vHKGsoyNy6AIiUAQhHskZqNUDtPSC0VTbx
+dOsVyNcLso/Rz5z2inIHJOjvV49h4yl6ErEnepRke0BqRvx+I36weUdsShV9M5Vi
+CHVd+EpJVA4LcwAoc1hiwnJrdjneEGiviPl2uRYtp6O/4PpRbfoTV732qCfecpdF
+EzczceP4J9iAXQKll1La7vzULMa0hggTRgzLgYOfeolD9Ju0HrQ=
+=ztxE
+-----END PGP SIGNATURE-----

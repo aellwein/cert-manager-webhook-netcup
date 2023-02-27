@@ -1,0 +1,28 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+apiVersion: v1
+appVersion: 1.0.3
+description: Allow cert-manager to solve DNS challenges using Netcup DNS API
+name: cert-manager-webhook-netcup
+version: 1.0.3
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.3.tgz: sha256:03f7f124bb6d76a606a9ed598466b1f4aa422c4406bde52cfff1202a209cd9fd
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmP8+yEACgkQV/husVzF
+n5YBmw/6A8RmOH3DARJnzepOkoc5SSBF4ytwcaasyiP1MbeQVNp64iqUHHrN35qt
+TmpcHUw4X78qrBRWZzLBMWQxjf5frkA54oj1rqxwWvGI03gUfBKKIS/MYUgNCABR
+WfPp1DO2BaOUlQxkJnc4DzDaTfInNwQjke+DalqJ9z9I8wBzMfyTaNr0U1Hh7WXJ
+H5TtnTIn05AgEft/4k1Kc/qBcdBx95IUtFsVGbIaMBIoAaxBBiZCueZ8/5H/MxcW
+GDYuaokAoGBF2x5DMVC3X2Jgd+jRKxMM/HRCpOIH8uPEDgEJHwPB7/eBOU/jgdnJ
+9ij3i6bHJP+LOvFZd3H3kcAcSHtsAE3YlnGcvAnXOKSmU9JrF7MhBXUVu6ckFbLe
+Err5PG0M3BOy6kZaOpd5levdLX7tQupiZCGiQ4dv6NNbYKdCXuX7J6dlmU+iLeVX
+AST9LFUHs5wi39R2BH41KMk2iMGAzsGEEV5wsa7Y8/2mbUgd0PNOA8KcywfHBjrI
+zKG9gk716eg9SOqWdaZ7YDPr2xUz0rmCm+C78uLnC3Wjv63XJ3pYyAGyiJpgoQdf
+KNy7NgYwJFRDaUKRH3HC5MHaNDUNSeapAJFhjuLPkFl37hi4Jro8OGX30Jp9gXYj
+MK5GzGlrX6Ud1/MpCpj5dqV0oOzGjAUsJsKABIE3KasuFs4M/7Q=
+=bG53
+-----END PGP SIGNATURE-----
