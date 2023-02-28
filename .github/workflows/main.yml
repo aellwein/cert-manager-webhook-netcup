@@ -1,4 +1,4 @@
-name: Build Docker image
+name: Build Images & Deploy GH Pages
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
         run: docker buildx create --use
 
       - name: Build & push Docker image (all architectures)
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         run: |
           make build-and-push
 
@@ -29,3 +29,35 @@ jobs:
         if: github.ref == 'refs/heads/develop'
         run: |
           make build-local
+  # Deploy GH Pages
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
