@@ -1,6 +1,6 @@
 apiVersion: v1
-appVersion: "1.0.15"
-version: 1.0.15
+appVersion: "1.0.16"
+version: 1.0.16
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
 home: https://github.com/aellwein/cert-manager-webhook-netcup
@@ -19,10 +19,10 @@ annotations:
       email: alex.ellwein@gmail.com
   artifacthub.io/containsSecurityUpdates: "true"
   artifacthub.io/changes: |
-    - kind: added
-      description: "use Alpine 3.18 base image"
     - kind: fixed
-      description: "upgrade base image to mitigate openssl CVE-2023-1255"
+      description: "use Busybox 1.36.1 for base image to mitigate CVE-2023-2650"
+    - kind: added
+      description: "Build with Go 1.20.5"
   artifacthub.io/signKey: |
     fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
     url: https://keybase.io/aellwein/pgp_keys.asc
