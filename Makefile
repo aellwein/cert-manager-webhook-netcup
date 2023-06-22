@@ -38,6 +38,10 @@ build-local:
 	docker buildx build --platform linux/amd64 \
 		-t $(IMAGE_NAME):$(IMAGE_TAG) . --push
 
+build-local-develop:
+	docker buildx build --platform linux/amd64 \
+		-t $(IMAGE_NAME):develop . --push
+
 .PHONY: rendered-manifest.yaml
 rendered-manifest.yaml:
 	helm template \

@@ -28,7 +28,7 @@ jobs:
       - name: Build & push Docker image (amd64 only for develop)
         if: github.ref == 'refs/heads/develop'
         run: |
-          make build-local
+          make build-local-develop
   # Deploy GH Pages
   deploy:
     if: github.ref == 'refs/heads/main'
@@ -57,7 +57,7 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-        
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
