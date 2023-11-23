@@ -6,7 +6,7 @@ require (
 	github.com/aellwein/netcup-dns-api v1.0.3
 	github.com/cert-manager/cert-manager v1.11.0
 	github.com/miekg/dns v1.1.51
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.4
 	k8s.io/apiextensions-apiserver v0.26.1
 	k8s.io/apimachinery v0.26.1
 	k8s.io/client-go v0.26.1
