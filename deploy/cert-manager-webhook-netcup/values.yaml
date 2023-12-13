@@ -14,8 +14,9 @@ certManager:
   serviceAccountName: cert-manager
 
 image:
-  repository: elvino76/cert-manager-webhook-netcup
-  tag: 1.0.18
+  repository: ghcr.io/aellwein/cert-manager-webhook-netcup
+  # set version here for upcoming release
+  tag: 1.0.19
   # sha hash can be used to specify image version, instead of tag
   hash: ""
   pullPolicy: IfNotPresent
