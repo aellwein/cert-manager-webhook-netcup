@@ -146,7 +146,15 @@ func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, key stri
 
 	recs, err := sess.InfoDnsRecords(domain)
 	if err != nil {
-		return fmt.Errorf("unable to get DNS records for domain '%s': %v", resolvedFqdn, err)
+		if sess.LastResponse != nil &&
+			sess.LastResponse.Status == string(netcup.StatusError) &&
+			sess.LastResponse.StatusCode == 5029 {
+			// See https://github.com/aellwein/cert-manager-webhook-netcup/issues/41
+			// Netcup API returns an error here, but for us it is actually a warning in case no DNS records are found for the domain.
+			// The resulting records will be an empty DnsRecord array, so we just proceed here.
+		} else {
+			return fmt.Errorf("unable to get DNS records for domain '%s': %v", resolvedFqdn, err)
+		}
 	}
 	var foundRec *netcup.DnsRecord
 	for _, rec := range *recs {
