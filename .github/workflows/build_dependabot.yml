@@ -1,0 +1,18 @@
+name: Build Dependabot PR
+on:
+  pull_request:
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build (linux/amd64)
+        uses: docker/build-push-action@v5
+        with:
+          platforms: linux/amd64
+          push: false
+          context: .
