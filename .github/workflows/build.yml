@@ -34,7 +34,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build & push Docker image (all architectures)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         if: github.ref == 'refs/heads/main'
         with:
           platforms: linux/arm/v7,linux/amd64,linux/arm64/v8,linux/ppc64le,linux/s390x
@@ -44,7 +44,7 @@ jobs:
 
       # this is used mainly for testing
       - name: Build & push Docker image (amd64 only for develop)
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         if: github.ref == 'refs/heads/develop'
         with:
           platforms: linux/amd64
