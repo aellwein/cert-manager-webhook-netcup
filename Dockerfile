@@ -6,7 +6,7 @@ COPY . .
 ARG TARGETOS TARGETARCH
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o webhook -ldflags '-w -extldflags "-static"' .
 
-FROM alpine:latest AS certs
+FROM alpine:3.20.3 AS certs
 RUN apk add -U --no-cache ca-certificates
 
 FROM busybox:1.37.0-glibc
