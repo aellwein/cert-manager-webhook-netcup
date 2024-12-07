@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM golang:1.23.2 AS build
+FROM --platform=$BUILDPLATFORM golang:1.23.4 AS build
 WORKDIR /workspace
 COPY go.mod go.sum .
 RUN go mod download
@@ -6,7 +6,7 @@ COPY . .
 ARG TARGETOS TARGETARCH
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o webhook -ldflags '-w -extldflags "-static"' .
 
-FROM alpine:3.20.3 AS certs
+FROM alpine:3.21.0 AS certs
 RUN apk add -U --no-cache ca-certificates
 
 FROM busybox:1.37.0-glibc
