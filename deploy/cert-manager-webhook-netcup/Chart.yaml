@@ -1,6 +1,6 @@
 apiVersion: v1
-appVersion: "1.0.26"
-version: 1.0.26
+appVersion: "1.0.27"
+version: 1.0.27
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
 home: https://github.com/aellwein/cert-manager-webhook-netcup
@@ -21,11 +21,7 @@ annotations:
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
     - kind: security
-      description: "update cert-manager to 1.16.2 to mitigate GHSA-r4pg-vg54-wxx4"
-    - kind: changed
-      description: "use Go 1.23.4 for build"
-    - kind: changed
-      description: "bump indirect dependencies"
+      description: "update bump golang.org/x/crypto to mitigate CVE-2024-45337"
   artifacthub.io/signKey: |
     fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
     url: https://keybase.io/aellwein/pgp_keys.asc
