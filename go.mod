@@ -6,7 +6,7 @@ require (
 	github.com/aellwein/netcup-dns-api v1.0.5
 	github.com/cert-manager/cert-manager v1.16.0-beta.0.0.20250102170121-98b0bc587268
 	k8s.io/apiextensions-apiserver v0.32.0
-	k8s.io/apimachinery v0.32.0
+	k8s.io/apimachinery v0.32.1
 	k8s.io/client-go v0.32.0
 	k8s.io/klog/v2 v2.130.1
 )
