@@ -1,4 +1,7 @@
 [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/cert-manager-webhook-netcup)](https://artifacthub.io/packages/helm/cert-manager-webhook-netcup/cert-manager-webhook-netcup)
+[![Go Report Card](https://goreportcard.com/badge/github.com/aellwein/cert-manager-webhook-netcup)](https://goreportcard.com/report/github.com/aellwein/cert-manager-webhook-netcup)
+[![License](https://img.shields.io/github/license/aellwein/cert-manager-webhook-netcup)](https://github.com/aellwein/cert-manager-webhook-netcup/blob/main/LICENSE)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aellwein/cert-manager-webhook-netcup)
 
 cert-manager-webhook-netcup
 ===========================
