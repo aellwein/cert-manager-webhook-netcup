@@ -3,7 +3,7 @@ module github.com/aellwein/cert-manager-webhook-netcup
 go 1.24
 
 require (
-	github.com/aellwein/netcup-dns-api v1.0.5
+	github.com/aellwein/netcup-dns-api v1.0.6
 	github.com/cert-manager/cert-manager v1.17.0
 	k8s.io/apiextensions-apiserver v0.32.1
 	k8s.io/apimachinery v0.32.1
