@@ -7,7 +7,6 @@ import (
 	"os"
 	"regexp"
 	"strconv"
-	"strings"
 
 	netcup "github.com/aellwein/netcup-dns-api/pkg/v1"
 	extapi "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
@@ -159,7 +158,7 @@ func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, key stri
 	var foundRec *netcup.DnsRecord
 	for _, rec := range *recs {
 		// record already exists?
-		if strings.HasPrefix(host, rec.Hostname) && rec.Type == "TXT" {
+		if host == rec.Hostname && rec.Type == "TXT" {
 			foundRec = &rec
 			break
 		}
