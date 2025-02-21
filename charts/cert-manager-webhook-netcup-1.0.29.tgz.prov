@@ -1,0 +1,55 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "bump several dependencies"
+    - kind: changed
+      description: "use Go 1.24"
+    - kind: changed
+    - kind: fixed
+      description: "Perform exact host match instead of matching prefix (thanks @romano21A)"
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.29
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.29
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.29.tgz: sha256:c022dbb2300198a16289ddf3bb27707d382b06d6391cc54272ad9aa211a3f215
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAme4vTEACgkQV/husVzF
+n5Z5vxAAtCZqUtWnrQ6TkhZjsrtJLpEMGPMU9aqwUMCx3R1ryn0+bLFMLQaWzcBk
+8BE/h3OV6MhHD374Gz9FLyWdEmdXHW8wDTZXYfkbqe8bLDf9kceyxDrRQGJXlK/8
+K2KSU7R5F57AEkOjvHrG1V/Luw/WyMiOlmCTugc6xXL2ZTzKflvXcMRvRquYwhYw
+9awmKt496oeUAyVsHn3eytf6ZAuaLmDDuM7NWm3g46POjcStUg+t4DglV0nO3YIQ
+g2oI3IZ7fwHzPlm0g6UUWhWXNCq0kq5+E+V5ltAHIYLWfTImqVWZGuva7muOdkcF
+Ux8Dain0UCwVSj83tS/0XB8jVCipaMI/3+MxZTe93zyRe4FFmUNSeXmODNe3YZok
+Lzf7AjFcoyg+EHlYYIDrYOX1/p1xh5XxtICt2TA8yY0n4KFwTgd6T4G/WpbIOU7S
+tPu+GMbVQuhZxPbUm48RE80pr9rOa5OvhH8Fuo+nsszO0+eGRFgWh/NqO/M1j4h1
+bIe+1Lk8BAzPSE+g2tETvYkxGGOBe3dASsT4xBC/KgHWeoPPv3Qyfh+yg7Jh4xMT
+WSPDpinMhjT3oK1xM1ooaL9TsLU5ZOOJZpL0xnQv4rbl++LBByqMtotjhwJJ9SWm
+ZmLpLQm4RTvBpMCMG2LNwT9wtyHTwyAvLV+qRx/Vfcx6XD0ibe0=
+=jZdw
+-----END PGP SIGNATURE-----
