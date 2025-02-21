@@ -23,8 +23,7 @@ annotations:
     - kind: changed
       description: "bump several dependencies"
     - kind: changed
-      description: "use Go 1.24"
-    - kind: changed
+      description: "use Go 1.24"    
     - kind: fixed
       description: "Perform exact host match instead of matching prefix (thanks @romano21A)"
   artifacthub.io/signKey: |

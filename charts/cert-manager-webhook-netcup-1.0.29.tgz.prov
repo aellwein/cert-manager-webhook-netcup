@@ -2,14 +2,9 @@
 Hash: SHA256
 
 annotations:
-  artifacthub.io/changes: |
-    - kind: changed
-      description: "bump several dependencies"
-    - kind: changed
-      description: "use Go 1.24"
-    - kind: changed
-    - kind: fixed
-      description: "Perform exact host match instead of matching prefix (thanks @romano21A)"
+  artifacthub.io/changes: "- kind: changed\n  description: \"bump several dependencies\"\n-
+    kind: changed\n  description: \"use Go 1.24\"    \n- kind: fixed\n  description:
+    \"Perform exact host match instead of matching prefix (thanks @romano21A)\"\n"
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/license: Apache-2.0
   artifacthub.io/maintainers: |
@@ -36,20 +31,20 @@ version: 1.0.29
 
 ...
 files:
-  ./cert-manager-webhook-netcup-1.0.29.tgz: sha256:c022dbb2300198a16289ddf3bb27707d382b06d6391cc54272ad9aa211a3f215
+  ./cert-manager-webhook-netcup-1.0.29.tgz: sha256:bdfd78213b10c4b787da2acaeb7e83320c06f6a9444b5b21d33e4656524ce5b9
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAme4vTEACgkQV/husVzF
-n5Z5vxAAtCZqUtWnrQ6TkhZjsrtJLpEMGPMU9aqwUMCx3R1ryn0+bLFMLQaWzcBk
-8BE/h3OV6MhHD374Gz9FLyWdEmdXHW8wDTZXYfkbqe8bLDf9kceyxDrRQGJXlK/8
-K2KSU7R5F57AEkOjvHrG1V/Luw/WyMiOlmCTugc6xXL2ZTzKflvXcMRvRquYwhYw
-9awmKt496oeUAyVsHn3eytf6ZAuaLmDDuM7NWm3g46POjcStUg+t4DglV0nO3YIQ
-g2oI3IZ7fwHzPlm0g6UUWhWXNCq0kq5+E+V5ltAHIYLWfTImqVWZGuva7muOdkcF
-Ux8Dain0UCwVSj83tS/0XB8jVCipaMI/3+MxZTe93zyRe4FFmUNSeXmODNe3YZok
-Lzf7AjFcoyg+EHlYYIDrYOX1/p1xh5XxtICt2TA8yY0n4KFwTgd6T4G/WpbIOU7S
-tPu+GMbVQuhZxPbUm48RE80pr9rOa5OvhH8Fuo+nsszO0+eGRFgWh/NqO/M1j4h1
-bIe+1Lk8BAzPSE+g2tETvYkxGGOBe3dASsT4xBC/KgHWeoPPv3Qyfh+yg7Jh4xMT
-WSPDpinMhjT3oK1xM1ooaL9TsLU5ZOOJZpL0xnQv4rbl++LBByqMtotjhwJJ9SWm
-ZmLpLQm4RTvBpMCMG2LNwT9wtyHTwyAvLV+qRx/Vfcx6XD0ibe0=
-=jZdw
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAme4ym4ACgkQV/husVzF
+n5ZzsQ/7BoUuoR4vw3cj2mEObNBNHw1q+q4+wolTuXxZmrI/c3geTbcs2Fz4+3g7
+NTI+J4JmTSQ9cAXc135IigwuoPSP43XpczsBM59wqxN0UCgVTMYMukEV5JPf3Qzd
+mbhh5cDMjD+XCgnQcBSSKwcn6z+rigOKGZjrMv55QdVl4vQ+EKNFz0ZuZtvRG4CO
+lr+39n3J2AClyYFsc1hoXaI8J/3mr/HvD4w9++aChj3KpPBVe3EOSSD4eaRGvxlT
+jj/Who/L9w7F9Y5o/6lxP8lI5SykBgukMzYAhu0/t48t2VDAWwkVZuRrMx987umu
+WKt25nGHF7AGXBeRxdzt/6nLjtInEHpt+tSitPAKFto29JO1dBkUEOTYEk+019Lj
+l341cXLDhApjh8FreXKrABk7q1EJlo5mJBG4JVAhQmujuUGLLy2tz/PG27p/z0pW
+qK0Vlc8qmzo758X0CC7hyb2sazDoLwyo28NO3V3bjXyeTALSrSkhMZcw0rugPRiS
+A4k5JWuaNSyeTmVcd2MTJdPLs6kRA44b3biHHSx9p3psmFncBZUJbMCvFu/1ICmA
+U402rmMuJeWXUW9SStMUhS5c8eVEzTMjQZjO8K95GmKd6uFUENitGn4Qsr55lpiF
+sOdg1jbGLYpeyLHH/rsDFRCcf4mxstOUGSNnYl1ZhQ+fCE/vxzM=
+=liqo
 -----END PGP SIGNATURE-----
