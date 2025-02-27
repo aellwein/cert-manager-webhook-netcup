@@ -6,10 +6,6 @@ COPY . .
 ARG TARGETOS TARGETARCH
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o webhook -ldflags '-w -extldflags "-static"' .
 
-FROM alpine:3.21.3 AS certs
-RUN apk add -U --no-cache ca-certificates
-
-FROM busybox:1.37.0-glibc
-COPY --from=certs /etc/ssl/certs /etc/ssl/certs
+FROM gcr.io/distroless/static-debian12
 COPY --from=build /workspace/webhook /usr/local/bin/webhook
 ENTRYPOINT ["webhook"]
