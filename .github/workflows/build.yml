@@ -41,6 +41,7 @@ jobs:
           push: true
           context: .
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          outputs: type=image,name=target,annotation-index.org.opencontainers.image.description="A webhook for cert-manager to solve DNS-01 challenges using the netcup DNS API"
 
       # this is used mainly for testing
       - name: Build & push Docker image (amd64 only for develop)
@@ -51,3 +52,4 @@ jobs:
           push: true
           context: .
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_DEVELOP }}
+          outputs: type=image,name=target,annotation-index.org.opencontainers.image.description="A webhook for cert-manager to solve DNS-01 challenges using the netcup DNS API"
