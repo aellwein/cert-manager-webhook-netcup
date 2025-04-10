@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: "bump dependencies to latest versions"
+    - kind: changed
+      description: "use Go 1.24.2 for build"
+    - kind: security
+      description: "bump golang.org/x/net to mitigate CVE-2025-22870"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.30
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.30
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.30.tgz: sha256:abe86f568ac7550971d514edb696833f382b58896c477854bbd8412b361d47d5
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmf4CUwACgkQV/husVzF
+n5ZJow//bgQrIanixK6G5BukqxZ/HqyT2TLsQ+aplZV4TRo96AXetn3i94CfBUFL
+0s8zwnJyY0jTjmwjJS4j/0HDnKN0NTZvKxYUjzthQznzsHR1AP96Mh9HCBHl8r8k
+jUBXJ8D6U4L078uJ+Pa68JcUfVTd8LtPh0MjfheX/RDUSzfroyGgZvYITPzvFdt+
+XM9Ze/WNQZu3Zyl3phmULb08K6XNuaNvofq4dKnR1tA7i5WnGnEowGn5QcS8WfkN
+dWIAPGyD8qcJ5M21bs86aWyK/tG389SMtN0NRxztG58BYTx2vVis9e3NTmiVZbAm
+8RaOVvLUrF7dYZQVB8dZP9dOatlwUQrqE818HEcw5ckGlL7LJshF+YMAW5qo8qm2
+VURjln6kCOTAZCpZBjlay38lY5ewTyvUc29HI/bmgU7n31ynGI7qiDjrMHBMdhLB
+d3J1FsFIvdNzXPv82lNj0t8Cf082hEnDfWWSv9fFUMNm9zcs00tSNnLRQf9+HKT2
+7jY3dTpdEsEGFE6V1Mb4fpKbt33KS2w1Adg+8S+FTbMs1bGSvXQi7Zf4ple9+il0
+46F++j+mfc7GI0z4CcXy9pyoc8ZpBOszSlqKhcIGawTUijUavR041sZVbMCd28J7
+tCV14gCK7B+lOPGDewb/+5zlO3n9C4ksqYrtMv38la8j/GXfhPw=
+=zk0y
+-----END PGP SIGNATURE-----
