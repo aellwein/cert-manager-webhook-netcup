@@ -43,11 +43,11 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
       # this is used mainly for testing
-      - name: Build & push Docker image (amd64 only for develop)
+      - name: Build & push Docker image (amd64 + linux/arm64/v8 for develop)
         uses: docker/build-push-action@471d1dc4e07e5cdedd4c2171150001c434f0b7a4 # v6.15.0
         if: github.ref == 'refs/heads/develop'
         with:
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64/v8
           push: true
           context: .
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG_DEVELOP }}
