@@ -19,7 +19,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.30
-    created: "2025-04-10T20:09:17.750751+02:00"
+    created: "2025-06-11T08:34:14.325008+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: abe86f568ac7550971d514edb696833f382b58896c477854bbd8412b361d47d5
@@ -50,7 +50,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.29
-    created: "2025-04-10T20:09:17.750382+02:00"
+    created: "2025-06-11T08:34:14.32468+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: bdfd78213b10c4b787da2acaeb7e83320c06f6a9444b5b21d33e4656524ce5b9
@@ -81,7 +81,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.28
-    created: "2025-04-10T20:09:17.750156+02:00"
+    created: "2025-06-11T08:34:14.324313+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: 0e3ffba16956acfddb394376c4a0d286e3f0df7d235eb78f273edd4c988a0e6d
@@ -112,7 +112,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.27
-    created: "2025-04-10T20:09:17.749939+02:00"
+    created: "2025-06-11T08:34:14.323948+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: e995e684910970d11cf055b0109c05b8047b2d82f17a5a433be53d2e11d4e6d9
@@ -147,7 +147,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.26
-    created: "2025-04-10T20:09:17.749711+02:00"
+    created: "2025-06-11T08:34:14.323312+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: 590b1f160356871b53edbefc2921502457e1d577575b2797e3ff3c251ee174c4
@@ -186,7 +186,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.25
-    created: "2025-04-10T20:09:17.749466+02:00"
+    created: "2025-06-11T08:34:14.322883+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: 09130047317c32251fdeb3d4f1105e7ecb442ba6bdddaee575d050f731e56f04
@@ -219,7 +219,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.24
-    created: "2025-04-10T20:09:17.749224+02:00"
+    created: "2025-06-11T08:34:14.322585+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: 8a1ab005f4ba5aeccd5566a2e42fc3870f4317ed18e68e2eac20cd220febbf16
@@ -254,7 +254,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.23
-    created: "2025-04-10T20:09:17.748987+02:00"
+    created: "2025-06-11T08:34:14.322281+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: 17507f967660690c761c27ab706085c14563b925e0fa3460122e13942c259ecd
@@ -293,7 +293,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.22
-    created: "2025-04-10T20:09:17.748749+02:00"
+    created: "2025-06-11T08:34:14.321989+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: bace3bc64c77573a8c7edad049a347a0c287229996add17117fd712d155d7249
@@ -332,7 +332,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.21
-    created: "2025-04-10T20:09:17.74849+02:00"
+    created: "2025-06-11T08:34:14.321679+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: a31f430e848abfad093c17bbc528b8ec98817c43ba6013f253224e8c2c6acc5f
@@ -365,7 +365,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.20
-    created: "2025-04-10T20:09:17.747236+02:00"
+    created: "2025-06-11T08:34:14.321325+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: fdbc579ef33cec9b176fbf26a076e615327ee58f9ad9d78ea3f2edf431faa422
@@ -396,7 +396,7 @@ entries:
         url: https://keybase.io/aellwein/pgp_keys.asc
     apiVersion: v1
     appVersion: 1.0.19
-    created: "2025-04-10T20:09:17.747024+02:00"
+    created: "2025-06-11T08:34:14.320996+02:00"
     description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
       via Netcup
     digest: 0e2b1c42b40008c532eaac08534bfb98877d6bd59a80a6293f3d63630596a111
@@ -413,356 +413,4 @@ entries:
     urls:
     - cert-manager-webhook-netcup-1.0.19.tgz
     version: 1.0.19
-  - annotations:
-      artifacthub.io/changes: |
-        - kind: fixed
-          description: "bump to cert-manager 1.13.3 and others to fix different CVEs"
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-      artifacthub.io/signKey: |
-        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
-        url: https://keybase.io/aellwein/pgp_keys.asc
-    apiVersion: v1
-    appVersion: 1.0.18
-    created: "2025-04-10T20:09:17.746803+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: 8e5442c883c2a1d588ee88b690ff2dd898e1c016b0d9709d8c88c378c2d459e1
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.18.tgz
-    version: 1.0.18
-  - annotations:
-      artifacthub.io/changes: |
-        - kind: fixed
-          description: "Issue #10: add CA certificates from Alpine image"
-      artifacthub.io/containsSecurityUpdates: "false"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-      artifacthub.io/signKey: |
-        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
-        url: https://keybase.io/aellwein/pgp_keys.asc
-    apiVersion: v1
-    appVersion: 1.0.17
-    created: "2025-04-10T20:09:17.74657+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: 48909dbd3cc34fbcaf268dc64ddb31dc4b869c823a613fff838ad331c58bc4d1
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.17.tgz
-    version: 1.0.17
-  - annotations:
-      artifacthub.io/changes: |
-        - kind: added
-          description: "use Alpine 3.18 base image"
-        - kind: fixed
-          description: "upgrade base image to mitigate openssl CVE-2023-1255"
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-      artifacthub.io/signKey: |
-        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
-        url: https://keybase.io/aellwein/pgp_keys.asc
-    apiVersion: v1
-    appVersion: 1.0.15
-    created: "2025-04-10T20:09:17.746324+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: 9004dfab480013735a304222d6cb258e1abf4ce6f2d91d6ab9079b6a143dbc6b
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.15.tgz
-    version: 1.0.15
-  - annotations:
-      artifacthub.io/changes: |
-        - kind: added
-          description: "use Go 1.20.3 for builds"
-        - kind: fixed
-          description: "upgrade base image to mitigate openssl CVE-2023-0464"
-        - kind: fixed
-          description: "upgrade base image to mitigate openssl CVE-2023-0465"
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-      artifacthub.io/signKey: |
-        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
-        url: https://keybase.io/aellwein/pgp_keys.asc
-    apiVersion: v1
-    appVersion: 1.0.14
-    created: "2025-04-10T20:09:17.746061+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: 5ae3d345efadfd55f8b3c154fd81f2ccd95896bed24ee918c9d71d495021a6b5
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.14.tgz
-    version: 1.0.14
-  - annotations:
-      artifacthub.io/changes: |
-        - kind: added
-          description: "bump dependencies"
-        - kind: fixed
-          description: "upgrade golang.org/x/net to 0.7.0 to mitigate CVE-2022-41723"
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-      artifacthub.io/signKey: |
-        fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
-        url: https://keybase.io/aellwein/pgp_keys.asc
-    apiVersion: v1
-    appVersion: 1.0.13
-    created: "2025-04-10T20:09:17.745856+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: 68f71804f042cf7d2a6a2470cb4dfb8c48c26389f07f66e266ae9a0619a15c21
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.13.tgz
-    version: 1.0.13
-  - annotations:
-      artifacthub.io/changes: |
-        - kind: added
-          description: "Use updated base Docker image (alpine 3.17.2) to mitigate CVEs in openssl and libcrypto3"
-        - kind: fixed
-          description: "openssl CVE-2023-0286"
-        - kind: fixed
-          description: "openssl CVE-2022-4304"
-        - kind: fixed
-          description: "openssl CVE-2022-4203"
-        - kind: fixed
-          description: "openssl CVE-2023-0215"
-        - kind: fixed
-          description: "openssl CVE-2022-4450"
-        - kind: fixed
-          description: "openssl CVE-2023-0216"
-        - kind: fixed
-          description: "openssl CVE-2023-0217"
-        - kind: fixed
-          description: "openssl CVE-2023-0401"
-        - kind: fixed
-          description: "libcrypto3 CVE-2023-0286"
-        - kind: fixed
-          description: "libcrypto3 CVE-2022-4203"
-        - kind: fixed
-          description: "libcrypto3 CVE-2022-4304"
-        - kind: fixed
-          description: "libcrypto3 CVE-2022-4450"
-        - kind: fixed
-          description: "libcrypto3 CVE-2023-0215"
-        - kind: fixed
-          description: "libcrypto3 CVE-2023-0216"
-        - kind: fixed
-          description: "libcrypto3 CVE-2023-0217"
-        - kind: fixed
-          description: "libcrypto3 CVE-2023-0401"
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-    apiVersion: v1
-    appVersion: 1.0.12
-    created: "2025-04-10T20:09:17.745622+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: bede761557c38f373c3923f9d9128f77c8fc32d2b1d79f1fda4cb548c031f62d
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.12.tgz
-    version: 1.0.12
-  - annotations:
-      artifacthub.io/changes: |
-        - Use updated base Docker image (alpine 3.17.1) mitigate [CVE-2022-3996](https://github.com/advisories/GHSA-vr8j-hgmm-jh9r)
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-    apiVersion: v1
-    appVersion: 1.0.11
-    created: "2025-04-10T20:09:17.745386+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: aa66de90af78012c0521d3ec48265746ee97f26640248e4b68328331c4ce6f2d
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.11.tgz
-    version: 1.0.11
-  - annotations:
-      artifacthub.io/changes: |
-        - Use updated deps to mitigate [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717)
-        - Use Go 1.19 and alpine 3.17 Docker image
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-    apiVersion: v1
-    appVersion: 1.0.10
-    created: "2025-04-10T20:09:17.745151+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: f6ec08186bf14c204eef0971e9c84545b5a8bb3d455d7cdcca488ddc71830695
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.10.tgz
-    version: 1.0.10
-  - annotations:
-      artifacthub.io/changes: |
-        - Mitigation for CVE-2022-32149
-        - README and annotations in chart for ArtifactHub
-        - Possibility to use digest (image hash) in values.yml
-      artifacthub.io/containsSecurityUpdates: "true"
-      artifacthub.io/license: Apache-2.0
-      artifacthub.io/maintainers: |
-        - name: Alex Ellwein
-          email: alex.ellwein@gmail.com
-    apiVersion: v1
-    appVersion: 1.0.9
-    created: "2025-04-10T20:09:17.751616+02:00"
-    description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
-      via Netcup
-    digest: d3b6eab27e21af3ae6fb5473e4b0e5db8d75c95bf5ee9b7f1b2e25e98b488bd3
-    home: https://github.com/aellwein/cert-manager-webhook-netcup
-    icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
-    keywords:
-    - cert-manager
-    - webhook
-    - letsencrypt
-    - netcup
-    - ACME
-    - DNS01
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.9.tgz
-    version: 1.0.9
-  - apiVersion: v1
-    appVersion: 1.0.8
-    created: "2025-04-10T20:09:17.751387+02:00"
-    description: Allow cert-manager to solve DNS challenges using Netcup DNS API
-    digest: 4b1c49ef9ab1c57428cff35824dd7cb13f187af74fa7dcd560dd788aa0dce892
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.8.tgz
-    version: 1.0.8
-  - apiVersion: v1
-    appVersion: 1.0.7
-    created: "2025-04-10T20:09:17.751225+02:00"
-    description: Allow cert-manager to solve DNS challenges using Netcup DNS API
-    digest: 0d262079f7326e41020df239298f5106bebaf9d797a9ce61550caa6457237a69
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.7.tgz
-    version: 1.0.7
-  - apiVersion: v1
-    appVersion: 1.0.6
-    created: "2025-04-10T20:09:17.751075+02:00"
-    description: Allow cert-manager to solve DNS challenges using Netcup DNS API
-    digest: f1eb0f11758d480a6fa187a54cdca8669b1ccdb75f022b53d84253723827b7c7
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.6.tgz
-    version: 1.0.6
-  - apiVersion: v1
-    appVersion: 1.0.5
-    created: "2025-04-10T20:09:17.75091+02:00"
-    description: Allow cert-manager to solve DNS challenges using Netcup DNS API
-    digest: 24df7547c2509b06972440c318a22e7e62c0c00c55a796b2c71b70c2e6a1f9bf
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.5.tgz
-    version: 1.0.5
-  - apiVersion: v1
-    appVersion: 1.0.3
-    created: "2025-04-10T20:09:17.750546+02:00"
-    description: Allow cert-manager to solve DNS challenges using Netcup DNS API
-    digest: 03f7f124bb6d76a606a9ed598466b1f4aa422c4406bde52cfff1202a209cd9fd
-    name: cert-manager-webhook-netcup
-    urls:
-    - cert-manager-webhook-netcup-1.0.3.tgz
-    version: 1.0.3
-generated: "2025-04-10T20:09:17.744507+02:00"
+generated: "2025-06-11T08:34:14.319717+02:00"
