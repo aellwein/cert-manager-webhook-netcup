@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "use Go 1.24.4 for build to mitigate several CVEs in stdlib"
+    - kind: changed
+      description: "bump dependencies to latest versions"
+    - kind: changed
+      description: "remove older releases from chart repository"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.31
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.31
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.31.tgz: sha256:4e94d802c76413b3d4c822e94d71fd610e67c1677f5f70997d64bf5c1d544d8c
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmhOl6UACgkQV/husVzF
+n5aFtA/9GGn2Ptf4BYs/xai3QEjqIbGvEH6lmUuubgb7HFcOzqXf1GBCG9b/rzUe
+3BECGp+J2ScSVnvt7XxJGIl8LEvE+k3auCSevB1HV2fTtBA7008Fs8rTjUhZheIh
+osA4lx8eCloQOQnK/H1zRm2iShK2+Wtz65jhZOAQRH9CIrZICQrKVWCW1UvyRMze
+1pdhBT5iTH3yjyZAMC1Xwgog8dLnxs1pU2MEp9+mQ0vZZbsZgGU22GpmMlN2NGDh
+dI/EoLb1m+aDnHq4qDrOTXE0ARAducUramSuyhBzhSdUo+3n8jeFFDBSpmybYYB8
+L2PB+U1OMs6WV2BEBPxzAoXguGZtxEqxc0xBmo5/AJtGmS77e6PMxlpkZack7MZI
+53Kqt1O7D0/ZRet79Rshw39qmBNz4cpyxmwiPqia+UpcZHHghg/1bZoYJJs1eDry
+XfEBArNEyDgwd4ThI9PgWN9cTZf/ztD6FBVARKBpwg5hJMjYmAftd7t4QAZ+tq6K
+hQvjWuTi7tFiENQfQot/rzM6VuBr1ol0P4rVHa6cRkVwcjJwNNiA3f+SHNaAx0ik
+N7CVSnxYzhjxTJuT8tzRKCQ36rTap0t95KG+hzLYuchYsVRiPQS59OlaLWNpmO30
+EVoLz4U3EEEiiXDwIg/9Jh8MeL32bBXxqZeVCRHwrCYL0TWNDVI=
+=dSjT
+-----END PGP SIGNATURE-----
