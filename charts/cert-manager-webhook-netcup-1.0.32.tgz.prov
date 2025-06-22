@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: fixed
+      description: "add missing namespaces fields in resources in Helm chart"
+    - kind: changed
+      description: "bump client-go and apimachinery to latest versions"
+    - kind: changed
+      description: "bump gh actions"
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.32
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.32
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.32.tgz: sha256:21cbcb0b4bf88910ba4da59a9c310a249865e5f755a191307a9aa3d0b29af40c
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmhYdKsACgkQV/husVzF
+n5ay1g//RHj1YAkHNRaYJru2POybU1HPI0T+pnWkLkB6A52DDjaTPWbEq1VubS3F
+edv7K+GXKyR1dm22MdpKl19QM6ncy1V5oC58wIcgQ4kLPcxqzeW77fQHjkaaeG9h
+hkWeyWjqtTG+jSRKb8MOQbFLnvyOmYnVWsZ7u/RGBgyZr2syweZyQ02zXRq6dJq7
+soEmPL3ThklBuYviLNUfW+8VS1H2XcRzI5WeLcHUWvD0ZksKU6PVqFiT+DZpgyxx
+SYOM9seEdhMmsQdja+QBRg+LxV+7PjPjQZwCD3kfwxTBmusR2FouDXib2pq3fMx8
+4QofW4f2238TXmTTBTMEtGZx0Y/m52q7ljj8dVPlbQ7V6sO81qkQeGT66HaIhegi
+HXdA8NTjBNULCUlohKJ6xGlRfoct+cY/bEragjpBWmfm8osh9oEkplBwEBz4TrPf
+FljdJPbqaQALB0soX0Bg/YvamBVPuuBY4PYvB4DwMlvaeheqJ0ZK3DMI/Wpn4Okt
+KJkBPuna5++VQWDgVCi9l5xFYdc/v23a+y538r3DB+4i8SG/7ALbxlh3DUZJ+Pif
+HCvTHrQJT50Kiuf/ja8a8WpZaP7qvi6KMAnsxjExzmLpc+UDCA63R9Q8ByDB6TZa
+ymrM62fbsDrheXsQ4pNhgWrv7DbLjJA6BJUetpd60jKaYcB4JD4=
+=1PXl
+-----END PGP SIGNATURE-----
