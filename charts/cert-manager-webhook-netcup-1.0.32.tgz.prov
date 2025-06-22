@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: fix
+      description: "add missing namespaces fields in resources in Helm chart"
+    - kind: changed
+      description: "bump client-go and apimachinery to latest versions"
+    - kind: changed
+      description: "bump gh actions"
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.32
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.32
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.32.tgz: sha256:a224ac9a60b7b7c5044cc16372fa6e2771f426d786e62590aac926859eefac31
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmhYY04ACgkQV/husVzF
+n5bjkxAAxkKSNIfDnu2jCTC8nRrOKT1BTucfihOhaJI/o2OXPR/vMxlQ0zjGveZ8
+CMSUGflJn9VnEmf1Xku05VeJl2u3Tlyz5J7B0JxnBKjykdVAHBRbCBDNHAMKGzRo
+khR59YKBVqyxfV7EEidSXnyvwBdd0xgawX7/A//jBUEcvrsrO7/e8AtalQCRISd1
+tzW5muI7oz155F0UeOOR/3qX+tseRbIq/P60PbzG89FWQ591NlP1UT5HDfW8MY+6
+gf6OkgmhIAJO/Mu6EUmfxmhzI/4mJ3al+qFCHd+8ShgKBnbNR2H1Nat58J6Wbn30
+VeQ9qUE0uYgWpMiEXFY5+5oW3xTPdXvmJPOxZeiuaLTJdErUoxEBVQjRdSvHoYvG
+GA4gmZ9ZAPmWmN1x1FoydXBuU82qKE5RfA1EP5WaB/jiVlUJDhY2rSwNs+dxcY+C
+gmC1ZArCcX8M8D+GNCrit56KTjGx+RjPjcO7kw3HQTwIzzgGaeMlQ5DxQKTr+H2l
+pbzFcekLh9dgDec0OQRVc0JWJF9O+6ILjm05ekgDPvYRw2CxX0SXsQWSFSj9UyvO
+DQ+Md8ADpkcZer1qLKtvX2liNpKPbyKFPR+wbKfWCw6QPOqueiT4Rn6wUL603fWE
+50TMKV5rlYgY37cU6DHT4mLKhpSBv3uDNM8BAqVkHfVpA8dN2eg=
+=YtFa
+-----END PGP SIGNATURE-----

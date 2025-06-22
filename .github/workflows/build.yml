@@ -8,7 +8,7 @@ env:
   USERNAME: ${{ github.actor }}
   IMAGE_NAME: aellwein/cert-manager-webhook-netcup
   # set version here for upcoming release
-  IMAGE_TAG: 1.0.31
+  IMAGE_TAG: 1.0.32
   IMAGE_TAG_DEVELOP: develop
 
 jobs:
