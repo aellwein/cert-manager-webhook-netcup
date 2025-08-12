@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Use Go 1.24.6 to address CVE-2025-47907"
+    - kind: changed
+      description: "bump client-go, apiextensions-apiserver and apimachinery to latest versions"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.33
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.33
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.33.tgz: sha256:235e9def4bbc9e50d5840174ec57c7d8d3600bfa01c48f8f843339b2cf04b58b
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmibGbEACgkQV/husVzF
+n5bw1xAAvgbONc/0qOgogr02cIM5c4IHKsuVEVzMZU/mREjJQkoOXEzTlF1Pe+KJ
+TYM4u6IyQuAAoa8BWSvMelqcA6G8cmndgYGnpnQeDs1FL3h74VdmfrV2QKh6kTtW
+WjujCx6lCm+eE9jpIqNzYDnNfybMa3wa7mdCKE8Px9X0foLGXDZQN+cOKzmT68ID
+2cJI31u4dIvHkh64dd5p+GTfXvCNKruQXbSGfMJbItZXtIbKnjSxpiJtnvkAjknS
+W6jaA58sQRg0OSXfh0pnUy0gHzm1gjCxOhZDfEkQPrXM7d3ZnF/TjLc6Lwo8BGf6
+YF2HwOlgtRvnzBD9qbajRblN7uMUognzaxkSbuFeGtDyG/HffpWUNqpzr9QJSjG/
+Q/UyreQTv0PdARHIKJ2VeqlsyUmpXvD+nMrdTBqoDZgMMYPDYi2cZTuiECnLuMoe
+wfN1pphLDlgN9neJ30c7PCazpYIG/Dn4ZYw9VMPFiye1BLy7p5bLqRftHT9wN7oL
+FoHqfcnxyftrjB/aKx3rzUQ/Dko6M2drzGhM/fNpEIIQpeBHZ6Mx4or2vp/OpG3/
+A8FBeZ+6c1U6PMe8lzlXbPAft2MH6VXXH7SJ3uB4IsOzZF5D1ZpAj651Jjq1YJBA
+1PHGkG1Bydl8uGP2Z3YxbZq88nNnk5EK32o9CPO0hA3GumngrVM=
+=KpY3
+-----END PGP SIGNATURE-----
