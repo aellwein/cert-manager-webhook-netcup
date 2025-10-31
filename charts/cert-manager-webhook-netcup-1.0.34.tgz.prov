@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Use Go 1.25.3 to address several vulnerabilities in Go stdlib"
+    - kind: changed
+      description: "bump to latest dependencies"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.34
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.34
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.34.tgz: sha256:dd282896810ef5240e5f849349d9a2c2d91f005d70abc82a5aab303d8267e8a4
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmkEReAACgkQV/husVzF
+n5ZPmBAAvdCYRmaEQ44zPIzN0kjsYyVW9T4OL+slPUce2BzslkF8xGoVMonQeuk0
+akrnyIzrkv3YZlJ4v/j++ug3s6IXMKMBb9k+QLQQpGadXKQ1LhVG7Pv7C6NUt2DK
+x7i8viaiFVXXhbg3i4siWkOKt3rav8wktV42sIOVpzp38pVwerzdyBxnDz9q2KOE
+2efW9UuspajRqxLwSzc7cwXrys4Uncly6ONd0pEq0DjyjJsbJEC+qTpaON0Zt5+B
+IafId9KmKJJWi9qi9KtXuF7c6iub+0gviG/ytf34w7aKCAS29qM5A9UC8C1AFji3
+6dgqY2aJcKKZGIPSgf2Eri1Qn7WS4crRVLuJ4e25q9i9bAC3HD2VVbxGLiCPQuQZ
+9JGpnOFOGRIVFAqfP4Aotdo0Q4euAh6mFQpM3CSoUOLR3ttTcF7seNCx7B5VPqp7
+cniDs3wnUunVNHaIycXDvyzab9uD3P08K21BolD31hOZ2PlSu82Q4aZvokUYT0NX
+fIDopRDtrFcUC5G5RgPyhp7M9wDrJkZVAyVn6iKfbNQ5pO761euvEHUMb8BhICBC
+tLyDRsilazCQeKps7nuHdzK8o6Dw0J7LYsqyBs0C/rmEvLTgBSdlFa9TinU8vaxX
+3F+C1nlz4xKLQgNPNsdphae4xMkE1a8JVP8n8jlPw8kMn7e2TKo=
+=v0U4
+-----END PGP SIGNATURE-----
