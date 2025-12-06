@@ -1,0 +1,58 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Use Go 1.25.5 to address CVE-2025-61729 in Go stdlib"
+    - kind: security
+      description: "Use Go 1.25.5 to address CVE-2025-61727 in Go stdlib"
+    - kind: security
+      description: "Use golang.org/x/crypto v0.45.0 to address CVE-2025-47914"
+    - kind: security
+      description: "Use golang.org/x/crypto v0.45.0 to address CVE-2025-58181"
+    - kind: changed
+      description: "bump to latest dependencies"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.35
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.35
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.35.tgz: sha256:a6dfd106a232a5496ce123f76190d3694fa00142f82315cc2954e00ea33fa29c
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmk0RPUACgkQV/husVzF
+n5b32g//XH1e04ZWp3ABZ32lyWcZKV1eoQMS989XICvP8EwJXxpVP3TjjpOkR50g
+GirOJ9Lxy1cBEzOl2nD1ddCs8lD1GMxpkT6i2Yu3KqBmDAeb0Im6yTtaO7gxxbFn
+2StaMs1hnC8FI4reEeeIxSRFV77CMbHNUNVDHoi+EQRB3VPQNDfUS7tJvpYjlRoz
+KXAu3VQ2OGUC4EnTjatiFfb2cS4KXNWSmMPHm9XJbygfVMI3x1k733LBfjOEHvXC
+cO6BX+DspvJ2Ipvi1Ab38+NcgSHWpJSwVl+s9yOTC7+O4g/H8Ox66ufF4e/p5xXN
+nGXr4/n5MYfENgdwTihw9D46jV9f7+DxOnzmTzqj+nDJN1N2bawTxwP8rl2x1nWy
+JKMUnsGX6dlpVQcDnJW+AAUR8lD8ZDmwGpRvURKti6t/E2zh7xF3La1d6X8PLisU
+3vbpzjgqx+tCQ/6NrZiuqk+35Nh+el5tkNe1sGFLSnfBp0HXxaPxiBT7QBF7Uwtx
+Unyin/RcTlJu8AVZsyNxHYxLnVK+KBLE4bqSOGgPlJAlPIypkln3EmGICNL2lcEj
+lBqGJRDGYUOd2OaahL3sixksUadJsjUiyh1Fgi4bzVMu0KdM+936GuEJXavOktrG
+a9T5LzkTkUQTJ90I5oU2MDycBCH+DYdq4zCPnXG0C5D/xlkcwhA=
+=DN2i
+-----END PGP SIGNATURE-----
