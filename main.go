@@ -19,9 +19,13 @@ import (
 	"github.com/cert-manager/cert-manager/pkg/acme/webhook/cmd"
 )
 
-var GroupName = os.Getenv("GROUP_NAME")
+var (
+	GroupName        = os.Getenv("GROUP_NAME")
+	version   string = "0.0.0-dev"
+)
 
 func main() {
+	klog.Infof("starting cert-manager-webhook-netcup (version %s)", version)
 	if GroupName == "" {
 		panic("GROUP_NAME must be specified")
 	}
