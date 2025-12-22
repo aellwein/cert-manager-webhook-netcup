@@ -1,0 +1,7 @@
+builds:
+  - id: webhook
+    dir: .
+    ldflags:
+      - -s -w
+      - -extldflags "-static"
+      - -X main.version={{.Env.VERSION}}

@@ -1,10 +1,10 @@
-name: Build Images
+name: Release
 
 on:
   workflow_dispatch:
   push:
-    branches:
-      - develop
+    tags:
+      - '*'
 
 env:
   KO_DOCKER_REPO: ghcr.io/aellwein
@@ -21,6 +21,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 
+      - run: git fetch --prune --unshallow
+
       - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c # v6.1.0
         with:
           go-version-file: 'go.mod'
@@ -29,23 +31,19 @@ jobs:
       - name: Setup ko
         uses: ko-build/setup-ko@d006021bd0c28d1ce33a07e7943d48b079944c8d # v0.9.0
 
+      # TBD
+      # - uses: sigstore/cosign-installer@dc72c7d5c4d10cd6bcb8cf6e3fd625a9e5e537da # v3.7.0
+      # - uses: imjasonh/setup-crane@31b88efe9de28ae0ffa220711af4b60be9435f6e # v0.4
+
       - name: Set tag output
         id: tag
         run: echo "tag_name=${GITHUB_REF#refs/*/}" >> "$GITHUB_OUTPUT"
 
-      - name: run ko build (on develop)
-        env:
-          auth_token: ${{ github.token }}
-        if: github.ref == 'refs/heads/develop' && success()
-        run: |
-          echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION="0.0.0-dev" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t develop  --platform=linux/arm64 # for my testing machine
-
-      - name: run ko build (on main)
+      - name: run ko build
         env:
           auth_token: ${{ github.token }}
           TAG_NAME: ${{ steps.tag.outputs.tag_name }}
         if: github.ref == 'refs/heads/main' && success()
         run: |
           echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION="${TAG_NAME}" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t ${TAG_NAME} --platform=all
+          VERSION="${TAG_NAME}" ko build -B -t ${TAG_NAME} --platform=all
