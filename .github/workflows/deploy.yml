@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   workflow_call:
   workflow_run:
-    workflows: ["Build Images"]
+    workflows: ["Release"]
     branches: [main]
     types:
       - completed

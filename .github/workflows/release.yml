@@ -43,7 +43,6 @@ jobs:
         env:
           auth_token: ${{ github.token }}
           TAG_NAME: ${{ steps.tag.outputs.tag_name }}
-        if: github.ref == 'refs/heads/main' && success()
         run: |
           echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
           VERSION="${TAG_NAME}" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t ${TAG_NAME} --platform=all
