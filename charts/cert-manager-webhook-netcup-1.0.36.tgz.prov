@@ -1,0 +1,54 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Use Go 1.25.6 to address CVE-2025-61726 in Go stdlib"
+    - kind: security
+      description: "Use Go 1.25.6 to address CVE-2025-61728 in Go stdlib"
+    - kind: security
+      description: "Use Go 1.25.6 to address CVE-2025-61730 in Go stdlib"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.36
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.36
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.36.tgz: sha256:998248ce48b63bd7e195a6acae630ceaa0421c79c4ad390fd5898cee5867e76c
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAml/PCYACgkQV/husVzF
+n5ZzqhAAqnmpsVqgJtP6ubt3B2sk53TaOhzmXWhU5kGoU9w+XJbNMUdfr5KkA5cL
+2qdeEP4oKGV3UDXhMqcGcOLdbIcpktilYLZ0lIqJlO+5iMlMBGie3g2YMCCjbzMH
+KseXAI8Pc7qIF3fyUMpZE8MbYnWaoecWnxIE9F65MErvEUjt45ROKK9vO6oowPtv
+A/3k+8slthKpGPAZPqWFVh5ZBnXTte4ObJV9bbvaL+3RA+iSRIKeWhUugVWg0C3w
+2REiE5XquqbrvuaFu2E5H7vBbeQGBK68XvffM9J2s73et2oSML5rDReQ6Cgxl5ch
+ty9YQDLVz41wvrmZojjWYhTTxJF5sz1/HoX8wtOYs1206InIu8OffKKeK5VOc0Nz
+E4oZM0ZQRq/EzLlhe8h2J2irI9lBn5ohjMtKiBvpw/X0Yd86xvOjVmzjNsRwNMHX
+ChMS1g6akLlvV/rAxO3RnBuvpEj7uWWpLTb6GCywkEL/XrREp81lQQhPUQ2y8U7U
+6vwuJrKvNv2YXtVF1UP5ipqwU9pFDXSyE6pe/HhBW7E1+FoT5Cr6pBw0CzAW+/Hc
+T6RRarRDiRiNsMDOM1SyI2fHY3oIhVxprDXcnSMKq6SjyPsL1nA+zVEV6fCGbmlq
+EMfy6sdi/0R4vrSfiWdfx24rBp+2OCldhtKsZFJk7CDSQDL4Plc=
+=ppwB
+-----END PGP SIGNATURE-----
