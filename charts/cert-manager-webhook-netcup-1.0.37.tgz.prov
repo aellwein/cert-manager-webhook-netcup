@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Use cert-manager 1.19.3 to address GHSA-gx3x-vq4p-mhhv"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.37
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.37
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.37.tgz: sha256:4030dd5ea7ea1be42c6862c29733f855818c57cef841c84af026a1bcc3b0d9f4
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmmBolkACgkQV/husVzF
+n5b4OA/6A+k9zMu8eJv3NegnQ1c0JlO3BxkBQuSVIfz+ybiHHMGrwFExdYJgZg3d
+xEKp955T9LCuVMSp1K8ypDLvQyRzg6rj1apySHd7SjjOmE+etZm5g2iiI5oVN//p
+zqZCoyCWZZx5v2oxHwlROCpQexq4OQvuYvmzc461RuWZ3fxAFHT5WxGT9WHdaNRp
+jqI7V7mz+j3q1eJxUdddc+hclhYR8WV28w/qp4Gv29AcapLh8BM7shXTZnh31SQ4
+uTN/ubsxtVU5h+zsEcQcemYNS6qticep0F7buIKm2zd9h+ZYngEatBB2aycpo/G2
+8EAl3bEUgQCFnUiV62AKWnK2wolprLSNvI/r47O9I2NIUH6aV7+WMrE9rceHPO1U
+OXwPZ63WunubqLwuVW5AIyFeoDFl0d99EQIHeF3y9Dome3w9ViYHM31QIU+clxg0
+NLP3pnDnKlFi2MR3V2voxlHQzvJJ5d+9qQCkk5YzBbCJuDqSLabCE1khyhFbi5l1
+vzBrhok/JNxO4Fbiumd3iGYa/jVx+b2jCn73bFgNjIWiMomWPZFxeADcbhjQ/1uO
+KpwwBnR63gxDhO3miMklqhlUOd+vdmweCpUxTU9UYffg02XY+Y0Zx/tVNI5S+Cto
+qjjJfb5vuDUXZXGr3ZlGumPbP/FuFU9SM49xoCDkfuF0/Qj13lg=
+=Ifh9
+-----END PGP SIGNATURE-----

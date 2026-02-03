@@ -16,7 +16,7 @@ certManager:
 image:
   repository: ghcr.io/aellwein/cert-manager-webhook-netcup
   # set version here for upcoming release
-  tag: 1.0.36
+  tag: 1.0.37
   # sha hash can be used to specify image version, instead of tag
   hash: ""
   pullPolicy: IfNotPresent
