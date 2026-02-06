@@ -1,4 +1,4 @@
-name: Build Images
+name: Build Image (develop)
 
 on:
   workflow_dispatch:
@@ -40,12 +40,3 @@ jobs:
         run: |
           echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
           VERSION="0.0.0-dev" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t develop  --platform=linux/arm64 # for my testing machine
-
-      - name: run ko build (on main)
-        env:
-          auth_token: ${{ github.token }}
-          TAG_NAME: ${{ steps.tag.outputs.tag_name }}
-        if: github.ref == 'refs/heads/main' && success()
-        run: |
-          echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION="${TAG_NAME}" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t ${TAG_NAME} --platform=all
