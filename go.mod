@@ -5,7 +5,7 @@ go 1.26.0
 require (
 	github.com/aellwein/netcup-dns-api v1.0.8
 	github.com/cert-manager/cert-manager v1.19.3
-	k8s.io/apiextensions-apiserver v0.34.3
+	k8s.io/apiextensions-apiserver v0.35.1
 	k8s.io/apimachinery v0.35.1
 	k8s.io/client-go v0.35.1
 	k8s.io/klog/v2 v2.130.1
@@ -103,9 +103,9 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	k8s.io/api v0.35.1 // indirect
-	k8s.io/apiserver v0.34.3 // indirect
-	k8s.io/component-base v0.34.3 // indirect
-	k8s.io/kms v0.34.3 // indirect
+	k8s.io/apiserver v0.35.1 // indirect
+	k8s.io/component-base v0.35.1 // indirect
+	k8s.io/kms v0.35.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20251125145642-4e65d59e963e // indirect
 	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4 // indirect
 	sigs.k8s.io/apiserver-network-proxy/konnectivity-client v0.34.0 // indirect
