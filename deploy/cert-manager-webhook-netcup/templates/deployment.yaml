@@ -21,10 +21,14 @@ spec:
         release: {{ .Release.Name }}
     spec:
       serviceAccountName: {{ include "cert-manager-webhook-netcup.fullname" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
           image: {{ include "cert-manager-webhook-netcup.fullImageName" . }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
           args:
             - --tls-cert-file=/tls/tls.crt
             - --tls-private-key-file=/tls/tls.key
