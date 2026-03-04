@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"os"
 	"regexp"
@@ -17,6 +18,7 @@ import (
 
 	"github.com/cert-manager/cert-manager/pkg/acme/webhook/apis/acme/v1alpha1"
 	"github.com/cert-manager/cert-manager/pkg/acme/webhook/cmd"
+	"kernel.org/pub/linux/libs/security/libcap/cap"
 )
 
 var (
@@ -29,7 +31,17 @@ func main() {
 	if GroupName == "" {
 		panic("GROUP_NAME must be specified")
 	}
-
+	klog.Infof("current capabilities: %s", cap.GetProc())
+	caps := cap.NewSet()
+	required := []cap.Value{cap.NET_BIND_SERVICE}
+	if err := errors.Join(
+		caps.SetFlag(cap.Effective, true, required...),
+		caps.SetFlag(cap.Permitted, true, required...),
+		caps.SetProc(),
+	); err != nil {
+		klog.Fatalf("activating capabilities: %s: %v", caps, err)
+	}
+	klog.Infof("activated capabilities: %s", cap.GetProc())
 	cmd.RunWebhookServer(GroupName,
 		&netcupDNSProviderSolver{},
 	)

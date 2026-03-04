@@ -5,3 +5,4 @@ builds:
       - -s -w
       - -extldflags "-static"
       - -X main.version={{.Env.VERSION}}
+    linux_capabilities: net_bind_service=p
