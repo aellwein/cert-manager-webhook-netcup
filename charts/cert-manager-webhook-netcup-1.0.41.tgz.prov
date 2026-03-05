@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: fixed
+      description: "enable net_bind_service capability to allow running as non-root user"
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.41
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.41
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.41.tgz: sha256:1ee3b0328c60d3d4e417a05db48c59f69976f828a55507b95242e04495a3a34e
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmmptZcACgkQV/husVzF
+n5YWwxAAky7zqZZNe5qS/uIZEn/D13Qy1/N7hAxQXH+ekMJHXgqYMRVPr03V4OzT
+21lCHcoek41BOlr6ul/dyAFKsZcChKHKT2Jlhkn5IDfPfKfInWjCsJdO2x2ZqCVc
+lyFDwOt5o0JT5w2cAEHgLKhXc89Ypbd+Ddiq64nIE+is6P478LwLm4Z220BHzYMY
+drrrMPEANUo6mygzrhCyuOd+PhKiG+rH5E7Z+SRMv1zPgOWJqVxlJ7CPtdt3fQeA
+Rf1X3IZX1KhAu7IUJCtdzfw5Us7ZR+C+NNQmOAyVan8Kx60FulQhCNcQwx4KoPLI
+oBiHtwSnRIqw/OIUSFP2axurH6P6Y6UYnDQ5+Xdpfz820m0N4pX869JCbwHGSTna
+ArcQawk0fAzOeEOZbL0AZ5UGjUgF1I1jm2hec9QN170R7Mu+xuClbsqsGVBD8+Va
+7kSYVuJBNzeVZeY2au71vmybBZv46X46bsuL7aP6UwZy95RUv2adhmusmm6dC0ZU
+0Yj47LiphpHFPrdTgcE72gO6fZYyl2VLlt/N/cy/Cyzwe0iUS/wGOkpN7NR02A85
+MrBRQBRU0RTQTg8mH40HYB1IniY7EmHXrCIkzji3jrqfPE1Vn8hV4l2vwdok+DOC
+sR/cjcaJg7E5G0iEFObr6pVHqZNfjRUOATmgEy3dU8nByJ+J0J4=
+=5uoy
+-----END PGP SIGNATURE-----
