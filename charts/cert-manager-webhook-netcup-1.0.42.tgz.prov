@@ -1,0 +1,50 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Bump to Golang 1.26.1 to address CVEs in stdlib: CVE-2026-25679,CVE-2026-27137,CVE-2026-27142,CVE-2026-27138,CVE-2026-27139"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.42
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.42
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.42.tgz: sha256:4fa82e1e8b4e82d6e1f2ca9974c5f3529a35946fe4c500283490210ef04ab475
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmmyaJIACgkQV/husVzF
+n5YQ4Q/9EC3FKJdavm6ZHmeLXL6uTny7V+t4GP2ZRQZHC/6emroMeHehMJ3DVLgr
+CPRZlTOKnSfcGU5xU5Z0R9ECpWaldA5DHFbdjZ+YaVXcu7TM4RfXrms7hsgytUnh
+oT2jeqrPl7sTUs3v6+7BnLVP+u6JUzSaE6ezUO6DgxRDLChUtTp5cBr5OshRP5k4
+ptSdiu/KFOLY4woBqLlth/VC6wutfnJWnLl64p5bbGfktGq9NA8PbJcjJGeYxWCz
+GrLQZJRZDT/OJvNqkI447kDLrLBWIkrv+GOivyOEFbNnGkPIuU0yeN/Q+9fuCfix
+8s9Tdyd2ilVuM05/RD0BYJpf4tNTpqVjX5H6X+0zskqC5nVNyNzdfCG7C0WJBbvZ
+CeKWZJgBzFyPlO2v9xvScG2tIuOLO3zPJ5glBXtqfobeBw7AaN1fm8ektouvJ83t
+6rU5E02Wqo5XQo5j8ekCd26Th6cJA4FxL4UfmH3Owm06ZPfi9QfqFfbZTrcrgANm
+v2GpD46nNN+NUtzrDw+NPdO0/rB80eoQZjBuG+HYjn5dmCamiw5I6SI/k/VZKs7z
+0z5w2wMBSX7Gu4R3NXkH+kcsuM1vEGv3gFS4/iaylBePtxgP9TRyMAzS8b7sTruj
+beWfLIxZUCV0zGJi/ouPno8e2mLLPExiHMkNqaWbUhdmVABen+g=
+=Nfw9
+-----END PGP SIGNATURE-----
