@@ -6,7 +6,7 @@ require (
 	github.com/aellwein/netcup-dns-api v1.0.8
 	github.com/cert-manager/cert-manager v1.20.0
 	k8s.io/apiextensions-apiserver v0.35.2
-	k8s.io/apimachinery v0.35.2
+	k8s.io/apimachinery v0.35.3
 	k8s.io/client-go v0.35.2
 	k8s.io/klog/v2 v2.140.0
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
