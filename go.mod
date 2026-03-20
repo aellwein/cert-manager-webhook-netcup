@@ -5,9 +5,9 @@ go 1.26.1
 require (
 	github.com/aellwein/netcup-dns-api v1.0.8
 	github.com/cert-manager/cert-manager v1.20.0
-	k8s.io/apiextensions-apiserver v0.35.2
-	k8s.io/apimachinery v0.35.2
-	k8s.io/client-go v0.35.2
+	k8s.io/apiextensions-apiserver v0.35.3
+	k8s.io/apimachinery v0.35.3
+	k8s.io/client-go v0.35.3
 	k8s.io/klog/v2 v2.140.0
 	kernel.org/pub/linux/libs/security/libcap/cap v1.2.77
 )
@@ -102,10 +102,10 @@ require (
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
-	k8s.io/api v0.35.2 // indirect
-	k8s.io/apiserver v0.35.2 // indirect
-	k8s.io/component-base v0.35.2 // indirect
-	k8s.io/kms v0.35.2 // indirect
+	k8s.io/api v0.35.3 // indirect
+	k8s.io/apiserver v0.35.3 // indirect
+	k8s.io/component-base v0.35.3 // indirect
+	k8s.io/kms v0.35.3 // indirect
 	k8s.io/kube-openapi v0.0.0-20260319004828-5883c5ee87b9 // indirect
 	k8s.io/utils v0.0.0-20260210185600-b8788abfbbc2 // indirect
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.77 // indirect
