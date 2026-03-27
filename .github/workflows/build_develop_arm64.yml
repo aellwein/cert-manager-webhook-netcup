@@ -1,4 +1,4 @@
-name: Build Image (develop)
+name: Build Image (branch:develop - linux/arm64)
 
 on:
   workflow_dispatch:
@@ -39,4 +39,4 @@ jobs:
         if: github.ref == 'refs/heads/develop' && success()
         run: |
           echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION="0.0.0-dev" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t develop  --platform=linux/arm64 --platform=linux/amd64 # for testing
+          VERSION="0.0.0-dev" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t develop  --platform=linux/arm64 # for testing
