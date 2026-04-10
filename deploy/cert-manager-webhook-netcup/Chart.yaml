@@ -1,6 +1,6 @@
 apiVersion: v1
-appVersion: "1.0.43"
-version: 1.0.43
+appVersion: "1.0.44"
+version: 1.0.44
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
 home: https://github.com/aellwein/cert-manager-webhook-netcup
@@ -21,7 +21,21 @@ annotations:
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
     - kind: security
-      description: "Bump google.golang.org/grpc from 1.79.2 to 1.79.3 to mitigate CVE-2026-33186 (GHSA-p77j-4mvh-x3m3)"
+      description: "Bump to go.opentelemetry.io/otel v1.43.0 to mitigate CVE-2026-39883"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32281"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32289"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32288"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32280"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32282"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32283"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-33810"
     - kind: changed
       description: "bump other transient dependencies"
   artifacthub.io/signKey: |

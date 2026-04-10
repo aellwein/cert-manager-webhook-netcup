@@ -1,0 +1,67 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: "Bump to go.opentelemetry.io/otel v1.43.0 to mitigate CVE-2026-39883"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32281"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32289"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32288"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32280"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32282"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32283"
+    - kind: security
+      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-33810"
+    - kind: changed
+      description: "bump other transient dependencies"
+  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Alex Ellwein
+      email: alex.ellwein@gmail.com
+  artifacthub.io/signKey: |
+    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
+    url: https://keybase.io/aellwein/pgp_keys.asc
+apiVersion: v1
+appVersion: 1.0.44
+description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge
+  via Netcup
+home: https://github.com/aellwein/cert-manager-webhook-netcup
+icon: https://raw.githubusercontent.com/cert-manager/cert-manager/master/logo/logo.png
+keywords:
+- - cert-manager
+- - webhook
+- - letsencrypt
+- - netcup
+- - ACME
+- - DNS01
+name: cert-manager-webhook-netcup
+version: 1.0.44
+
+...
+files:
+  ./cert-manager-webhook-netcup-1.0.44.tgz: sha256:82246dc02a77bd3e3abfc3a0ff6ac8b49fc8b22a05052e5875707af4d9bb3e22
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAEBCAA5FiEE1HATsJzIi3L2TkHNV/husVzFn5YFAmnYpP0bFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMCwzAAoJEFf4brFcxZ+WX3gP/ioqRpsjPZwf3V+jgE6r
+/UB12r9rB8GAtdNJJ7PCPCdRuaxGj6ahRPjHXPvu2vrnBJorPyWxIZLAgPU/jUQC
+KDVtXHguQzSxbK+VXT7TNP5n2RkMHpwEqC6sPM67BflPJEjntIhYl0Mi4zXGMs02
+4pqP5Oi6B313MJ3AztOD1/FXUpfNSBYastNOR8PEVWj8BrYHKkN5eAy876k+zQ+0
+Z3UgP0ROqkHFkJouFhYHcVMlJgOzbk6qXfSEzngZOLYVXMtdA6Mp33qMy3PwzvwX
+HP3egT4jjKsR7537D29bXI8nUJucQNP6XPQ8Gr5zgMs8aCZiP3PvJr1qoVKz3y8S
+qDIM34Y0f+GYiOB0hNkBu3LDPM7UdgcZrNVgkCAaJL/C8p5TU6uuWXyeHoVXXbGK
+gIJq8j0IZ0mWRIohGj2w5Q5doLJeS2ZHAvyEB4GRGYeAsxjlwcwE+JsBoGdA4ObH
+wfMcVQYv5SGdDT4o1vZXlDgmqGg4miomfs3+cvxzv9B1rCNpjai9oSeuSXnxMwWM
+PUZmCmAPQUyMEr9RHE/z3P+wnaZStGtbg9MzkgQLYovCU1fuos6Nc1HlSK8ih564
+AdVZ8LHon9LdSdIJnGCBsTYyXhkRG2T+g1I6ecx295bbijN2QEqOPOTJ6DY4mKEI
+CdDlTVtcxz5oCHk/YvvBf0Bl
+=caOF
+-----END PGP SIGNATURE-----
