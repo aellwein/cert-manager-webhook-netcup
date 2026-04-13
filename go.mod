@@ -4,7 +4,7 @@ go 1.26.2
 
 require (
 	github.com/aellwein/netcup-dns-api v1.0.8
-	github.com/cert-manager/cert-manager v1.20.1
+	github.com/cert-manager/cert-manager v1.20.2
 	k8s.io/apiextensions-apiserver v0.35.3
 	k8s.io/apimachinery v0.35.3
 	k8s.io/client-go v0.35.3
