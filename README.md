@@ -3,8 +3,17 @@
 [![License](https://img.shields.io/github/license/aellwein/cert-manager-webhook-netcup)](https://github.com/aellwein/cert-manager-webhook-netcup/blob/main/LICENSE)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/aellwein/cert-manager-webhook-netcup)
 
+
 cert-manager-webhook-netcup
 ===========================
+
+> ‼️ **Important Note:**
+>
+> beginning with the version `1.0.45`, all releases are available only via OCI registry:
+>
+> **oci://ghcr.io/aellwein/cert-manager-webhook-netcup**
+>
+>
 
 [cert-manager](https://cert-manager.io) webhook implementation for use
 with [Netcup](https://www.netcup.eu) provider for solving [ACME DNS-01
@@ -43,9 +52,7 @@ For more details, please refer to https://cert-manager.io/docs/configuration/acm
 
 Now, the actual webhook can be installed via Helm chart:
 ```
-helm repo add cert-manager-webhook-netcup https://aellwein.github.io/cert-manager-webhook-netcup/charts/
-
-helm install my-cert-manager-webhook-netcup cert-manager-webhook-netcup/cert-manager-webhook-netcup --namespace cert-manager
+helm install webhook-netcup oci://ghcr.io/aellwein/cert-manager-webhook-netcup/cert-manager-webhook-netcup --namespace cert-manager
 ```
 From that point, the issuer configured above should be able to solve
 the DNS01 challenges using ``cert-manager-webhook-netcup``.
