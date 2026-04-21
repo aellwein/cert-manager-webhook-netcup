@@ -12,6 +12,14 @@ on:
       image_tag:
         required: true
         type: string
+      deploy_oci_chart:
+        required: false
+        type: boolean
+        default: false
+      chart_version:
+        required: false
+        type: string
+        default: "0.0.0-dev"
 
 env:
   KO_DOCKER_REPO: ghcr.io/aellwein
@@ -48,9 +56,29 @@ jobs:
           auth_token: ${{ github.token }}
         run: |
           echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION="0.0.0-dev" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t ${{ inputs.image_tag }}  --platform=${{ inputs.platform }}
+          VERSION=${{ inputs.image_tag }} KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t ${{ inputs.image_tag }}  --platform=${{ inputs.platform }}
           docker pull ${KO_DOCKER_REPO}/cert-manager-webhook-netcup:${{ inputs.image_tag }}
           docker inspect --format='{{index .RepoDigests 0}}' ${KO_DOCKER_REPO}/cert-manager-webhook-netcup:${{ inputs.image_tag }} | sed -e 's/.*@//' > image_digest.txt
           DIGEST=$(cat image_digest.txt)
           echo "image_digest=${DIGEST}" >> "$GITHUB_OUTPUT"
           echo "Image digest: ${DIGEST}"          
+
+      - name: Prepare Helm chart
+        if: ${{ inputs.deploy_oci_chart && success() }}
+        run: |
+          yq e -i ".appVersion = \"${{ inputs.chart_version }}\"" deploy/cert-manager-webhook-netcup/Chart.yaml
+          yq e -i ".version = \"${{ inputs.chart_version }}\"" deploy/cert-manager-webhook-netcup/Chart.yaml
+          yq -e -i ".image.hash = \"${{ steps.ko-build.outputs.image_digest }}\"" deploy/cert-manager-webhook-netcup/values.yaml
+
+      - name: Deploy OCI chart
+        if: ${{ inputs.deploy_oci_chart && success() }}
+        uses: appany/helm-oci-chart-releaser@v0.5.0
+        with:
+          name: cert-manager-webhook-netcup
+          registry: ghcr.io
+          repository: aellwein/cert-manager-webhook-netcup
+          tag: ${{ inputs.chart_version }}
+          path: deploy/cert-manager-webhook-netcup
+          registry_username: ${{ secrets.REGISTRY_USERNAME }}
+          registry_password: ${{ secrets.REGISTRY_PASSWORD }}
+          update_dependencies: 'true'

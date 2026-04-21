@@ -9,8 +9,9 @@ permissions:
 jobs:
   build_image:
     uses: ./.github/workflows/build_image_for_arch.yml
+    secrets: inherit
     with:
       branch: develop
       platform: linux/amd64
       image_tag: develop
-    secrets: inherit
+      deploy_oci_chart: false
