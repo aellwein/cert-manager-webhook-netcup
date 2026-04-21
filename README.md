@@ -11,7 +11,7 @@ cert-manager-webhook-netcup
 >
 > beginning with the version `1.0.45`, all releases are available only via OCI registry:
 >
-> **oci://ghcr.io/aellwein/cert-manager-webhook-netcup**
+> **[oci://ghcr.io/aellwein/cert-manager-webhook-netcup](https://github.com/aellwein/cert-manager-webhook-netcup/pkgs/container/cert-manager-webhook-netcup%2Fcert-manager-webhook-netcup)**
 >
 >
 
