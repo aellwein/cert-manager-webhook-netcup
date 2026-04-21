@@ -22,6 +22,8 @@ annotations:
   artifacthub.io/changes: |
     - kind: aded
       description: "Added OCI chart deployment with chart signing"
+    - kind: changed
+      description: "Bump indirect dependencies"
   artifacthub.io/signKey: |
     fingerprint: "FA1F0CE58313D2638809BD05D51650A7D1BE5944"
     url: https://gist.githubusercontent.com/aellwein/112e7c157c4f60165b62602b2b62c2d7/raw/491cc2925f43ddb015d63c95f5ea2bca1f281c8c/pubkey.asc
