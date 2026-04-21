@@ -1,39 +1,16 @@
 name: Build Image (branch:develop - linux/amd64)
-
 on:
   workflow_dispatch:
 
-env:
-  KO_DOCKER_REPO: ghcr.io/aellwein
+permissions:
+  contents: read
+  packages: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-
-      - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
-        with:
-          go-version-file: 'go.mod'
-          check-latest: true
-
-      - name: Setup ko
-        uses: ko-build/setup-ko@d006021bd0c28d1ce33a07e7943d48b079944c8d # v0.9.0
-
-      - name: Set tag output
-        id: tag
-        run: echo "tag_name=${GITHUB_REF#refs/*/}" >> "$GITHUB_OUTPUT"
-
-      - name: run ko build (on develop)
-        env:
-          auth_token: ${{ github.token }}
-        if: github.ref == 'refs/heads/develop' && success()
-        run: |
-          echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION="0.0.0-dev" KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t develop  --platform=linux/amd64 # for testing
+  build_image:
+    uses: ./.github/workflows/build_image_for_arch.yml
+    with:
+      branch: develop
+      platform: linux/amd64
+      image_tag: develop
+    secrets: inherit

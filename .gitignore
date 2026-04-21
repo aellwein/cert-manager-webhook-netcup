@@ -20,3 +20,4 @@ apiserver.local.config/
 # Make artifacts
 _out
 _test
+image_digest.txt
