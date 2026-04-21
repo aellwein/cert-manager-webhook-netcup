@@ -20,7 +20,7 @@ annotations:
   artifacthub.io/containsSecurityUpdates: "false"
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
-    - kind: aded
+    - kind: added
       description: "Added OCI chart deployment with chart signing"
     - kind: changed
       description: "Bump indirect dependencies"
