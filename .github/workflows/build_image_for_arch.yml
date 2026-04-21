@@ -36,7 +36,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          ref: ${{ inputs.branch }}        
+          ref: ${{ inputs.branch }}
 
       - uses: actions/setup-go@4a3601121dd01d1626a1e23e37211e3254c1c06c # v6.4.0
         with:
@@ -61,7 +61,7 @@ jobs:
           docker inspect --format='{{index .RepoDigests 0}}' ${KO_DOCKER_REPO}/cert-manager-webhook-netcup:${{ inputs.image_tag }} | sed -e 's/.*@//' > image_digest.txt
           DIGEST=$(cat image_digest.txt)
           echo "image_digest=${DIGEST}" >> "$GITHUB_OUTPUT"
-          echo "Image digest: ${DIGEST}"          
+          echo "Image digest: ${DIGEST}"
 
       - name: Prepare Helm chart
         if: ${{ inputs.deploy_oci_chart && success() }}
@@ -70,7 +70,24 @@ jobs:
           yq e -i ".version = \"${{ inputs.chart_version }}\"" deploy/cert-manager-webhook-netcup/Chart.yaml
           yq -e -i ".image.hash = \"${{ steps.ko-build.outputs.image_digest }}\"" deploy/cert-manager-webhook-netcup/values.yaml
 
-      - name: Deploy OCI chart
+      - name: Import GPG key
+        if: ${{ inputs.deploy_oci_chart && success() }}
+        uses: crazy-max/ghaction-import-gpg@v6
+        id: gpg
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      # Helm requires the legacy GPG format
+      # @link https://helm.sh/docs/topics/provenance/#the-workflow
+      - name: Convert GPG v2 key
+        if: ${{ inputs.deploy_oci_chart && success() }}
+        run: |
+          gpg --export > ~/.gnupg/pubring.gpg
+          gpg --batch --pinentry-mode loopback --yes --passphrase '${{ secrets.GPG_PASSPHRASE }}' --export-secret-key > ~/.gnupg/secring.gpg
+
+
+      - name: Push and sign OCI chart
         if: ${{ inputs.deploy_oci_chart && success() }}
         uses: appany/helm-oci-chart-releaser@v0.5.0
         with:
@@ -81,4 +98,7 @@ jobs:
           path: deploy/cert-manager-webhook-netcup
           registry_username: ${{ secrets.REGISTRY_USERNAME }}
           registry_password: ${{ secrets.REGISTRY_PASSWORD }}
+          sign: true
+          signing_key: ${{ steps.gpg.outputs.name }}
+          signing_passphrase: ${{ secrets.GPG_PASSPHRASE }}
           update_dependencies: 'true'
