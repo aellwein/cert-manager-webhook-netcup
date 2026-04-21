@@ -1,6 +1,6 @@
 apiVersion: v1
-appVersion: "1.0.44"
-version: 1.0.44
+appVersion: "0.0.0"  # replace with actual version during release process
+version: 0.0.0 # replace with actual version during release process
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
 home: https://github.com/aellwein/cert-manager-webhook-netcup
@@ -17,27 +17,11 @@ annotations:
   artifacthub.io/maintainers: |
     - name: Alex Ellwein
       email: alex.ellwein@gmail.com
-  artifacthub.io/containsSecurityUpdates: "true"
+  artifacthub.io/containsSecurityUpdates: "false"
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
-    - kind: security
-      description: "Bump to go.opentelemetry.io/otel v1.43.0 to mitigate CVE-2026-39883"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32281"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32289"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32288"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32280"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32282"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-32283"
-    - kind: security
-      description: "Bump to Golang 1.26.2 to mitigate CVE-2026-33810"
-    - kind: changed
-      description: "bump other transient dependencies"
+    - kind: aded
+      description: "Added OCI chart deployment with chart signing"
   artifacthub.io/signKey: |
-    fingerprint: "F91914CE96676E209A8240290EEF2777053A7D1A"
-    url: https://keybase.io/aellwein/pgp_keys.asc
+    fingerprint: "FA1F0CE58313D2638809BD05D51650A7D1BE5944"
+    url: https://gist.githubusercontent.com/aellwein/112e7c157c4f60165b62602b2b62c2d7/raw/491cc2925f43ddb015d63c95f5ea2bca1f281c8c/pubkey.asc
