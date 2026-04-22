@@ -72,7 +72,7 @@ jobs:
 
       - name: Import GPG key
         if: ${{ inputs.deploy_oci_chart && success() }}
-        uses: crazy-max/ghaction-import-gpg@v6
+        uses: crazy-max/ghaction-import-gpg@v7
         id: gpg
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
