@@ -66,9 +66,9 @@ jobs:
       - name: Prepare Helm chart
         if: ${{ inputs.deploy_oci_chart && success() }}
         run: |
-          yq e -i ".appVersion = \"${{ inputs.chart_version }}\"" deploy/cert-manager-webhook-netcup/Chart.yaml
-          yq e -i ".version = \"${{ inputs.chart_version }}\"" deploy/cert-manager-webhook-netcup/Chart.yaml
-          yq -e -i ".image.hash = \"${{ steps.ko-build.outputs.image_digest }}\"" deploy/cert-manager-webhook-netcup/values.yaml
+          yq e -i ".appVersion = \"${{ inputs.chart_version }}\"" charts/cert-manager-webhook-netcup/Chart.yaml
+          yq e -i ".version = \"${{ inputs.chart_version }}\"" charts/cert-manager-webhook-netcup/Chart.yaml
+          yq -e -i ".image.hash = \"${{ steps.ko-build.outputs.image_digest }}\"" charts/cert-manager-webhook-netcup/values.yaml
 
       - name: Import GPG key
         if: ${{ inputs.deploy_oci_chart && success() }}
@@ -95,7 +95,7 @@ jobs:
           registry: ghcr.io
           repository: aellwein/cert-manager-webhook-netcup
           tag: ${{ inputs.chart_version }}
-          path: deploy/cert-manager-webhook-netcup
+          path: charts/cert-manager-webhook-netcup
           registry_username: ${{ secrets.REGISTRY_USERNAME }}
           registry_password: ${{ secrets.REGISTRY_PASSWORD }}
           sign: true
