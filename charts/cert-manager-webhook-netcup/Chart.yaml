@@ -17,13 +17,27 @@ annotations:
   artifacthub.io/maintainers: |
     - name: Alex Ellwein
       email: alex.ellwein@gmail.com
-  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/containsSecurityUpdates: "true"
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
-    - kind: added
-      description: "Added OCI chart deployment with chart signing"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-33811 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-33814 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-39820 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-39823 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-39825 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-39826 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-39836 in stdlib"
+    - kind: security
+      description: "Bump Golang to 1.26.3 to address CVE-2026-42499 in stdlib"
     - kind: changed
-      description: "Bump indirect dependencies"
+      description: "Bump k8s client and other dependencies"
   artifacthub.io/signKey: |
     fingerprint: "FA1F0CE58313D2638809BD05D51650A7D1BE5944"
     url: https://gist.githubusercontent.com/aellwein/112e7c157c4f60165b62602b2b62c2d7/raw/491cc2925f43ddb015d63c95f5ea2bca1f281c8c/pubkey.asc
