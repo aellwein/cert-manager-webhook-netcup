@@ -21,23 +21,13 @@ annotations:
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
     - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-33811 in stdlib"
+      description: "Bump Golang to 1.26.4 to address CVE-2026-42504 in stdlib"
     - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-33814 in stdlib"
+      description: "Bump Golang to 1.26.4 to address CVE-2026-27145 in stdlib"
     - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-39820 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-39823 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-39825 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-39826 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-39836 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.3 to address CVE-2026-42499 in stdlib"
+      description: "Bump Golang to 1.26.4 to address CVE-2026-42507 in stdlib"
     - kind: changed
-      description: "Bump k8s client and other dependencies"
+      description: "Bump k8s client and transitive dependencies"
   artifacthub.io/signKey: |
     fingerprint: "FA1F0CE58313D2638809BD05D51650A7D1BE5944"
     url: https://gist.githubusercontent.com/aellwein/112e7c157c4f60165b62602b2b62c2d7/raw/491cc2925f43ddb015d63c95f5ea2bca1f281c8c/pubkey.asc
