@@ -4,7 +4,7 @@ go 1.26.4
 
 require (
 	github.com/aellwein/netcup-dns-api v1.0.8
-	github.com/cert-manager/cert-manager v1.20.2
+	github.com/cert-manager/cert-manager v1.20.3
 	k8s.io/apiextensions-apiserver v0.36.2
 	k8s.io/apimachinery v0.36.2
 	k8s.io/client-go v0.36.2
@@ -94,8 +94,8 @@ require (
 	golang.org/x/text v0.38.0 // indirect
 	golang.org/x/time v0.15.0 // indirect
 	gomodules.xyz/jsonpatch/v2 v2.5.0 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20260618152121-87f3d3e198d3 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20260618152121-87f3d3e198d3 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20260622175928-b703f567277d // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20260622175928-b703f567277d // indirect
 	google.golang.org/grpc v1.81.1 // indirect
 	google.golang.org/protobuf v1.36.12-0.20260120151049-f2248ac996af // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
@@ -105,7 +105,7 @@ require (
 	k8s.io/apiserver v0.36.2 // indirect
 	k8s.io/component-base v0.36.2 // indirect
 	k8s.io/kms v0.36.2 // indirect
-	k8s.io/kube-openapi v0.0.0-20260618221249-bc653b64f974 // indirect
+	k8s.io/kube-openapi v0.0.0-20260624041617-8f3fa4921821 // indirect
 	k8s.io/streaming v0.36.2 // indirect
 	k8s.io/utils v0.0.0-20260617174310-a95e086a2553 // indirect
 	kernel.org/pub/linux/libs/security/libcap/psx v1.2.78 // indirect
