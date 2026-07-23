@@ -21,9 +21,7 @@ annotations:
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
     - kind: security
-      description: "Bump Golang to 1.26.5 to address CVE-2026-39822 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.5 to address CVE-2026-42505 in stdlib"
+      description: "Bump google.golang.org/grpc to v1.82.1 to address GHSA-hrxh-6v49-42gf"
     - kind: changed
       description: "Bump k8s client and transitive dependencies"
   artifacthub.io/signKey: |
