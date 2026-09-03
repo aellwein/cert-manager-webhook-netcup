@@ -1,5 +1,5 @@
 apiVersion: v1
-appVersion: "0.0.0"  # replace with actual version during release process
+appVersion: "0.0.0" # replace with actual version during release process
 version: 0.0.0 # replace with actual version during release process
 description: A Helm chart for cert manager webhook solver for ACME DNS01 challenge via Netcup
 name: cert-manager-webhook-netcup
@@ -21,23 +21,11 @@ annotations:
   # kinds: added, changed, deprecated, removed, fixed, security.
   artifacthub.io/changes: |
     - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-39821 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-46600 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-33818 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-56853 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-56858 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-56859 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-56860 in stdlib"
-    - kind: security
-      description: "Bump Golang to 1.26.6 to address CVE-2026-56862 in stdlib"
+      description: "Bump google.golang.org/grpc to 1.83.2 to address CVE-2026-84304"
     - kind: changed
-      description: "Bump transitive dependencies"
+      description: "Bump Golang to 1.27.1"
+    - kind: changed
+      description: "Bump k8s client and transitive dependencies"
   artifacthub.io/signKey: |
     fingerprint: "FA1F0CE58313D2638809BD05D51650A7D1BE5944"
     url: https://gist.githubusercontent.com/aellwein/112e7c157c4f60165b62602b2b62c2d7/raw/491cc2925f43ddb015d63c95f5ea2bca1f281c8c/pubkey.asc
