@@ -4,8 +4,8 @@ github.com/Masterminds/semver/v3 v3.4.0 h1:Zog+i5UMtVoCU8oKka5P7i9q9HgrJeGzI9SA1
 github.com/Masterminds/semver/v3 v3.4.0/go.mod h1:4V+yj/TJE1HU9XfppCwVMZq3I84lprf4nC11bSS5beM=
 github.com/NYTimes/gziphandler v1.1.1 h1:ZUDjpQae29j0ryrS0u/B8HZfJBtBQHjqw2rQ2cqUQ3I=
 github.com/NYTimes/gziphandler v1.1.1/go.mod h1:n/CVRwUEOgIxrgPvAQhUUr9oeUtvrhMomdKFjzJNB0c=
-github.com/aellwein/netcup-dns-api v1.0.9 h1:tVW3NeoNT1WktDb7yO077eIaCRXxA6eYDiNqCCQB4WE=
-github.com/aellwein/netcup-dns-api v1.0.9/go.mod h1:zSxP/DIqk+cWUPCmJEQnzy3dXFca5d0+KrD8pKD1CfQ=
+github.com/aellwein/netcup-dns-api v1.1.0 h1:jTf5phXvEai8sJZThKh+jCTvYgHw/ZQNWzP3OBKVIA8=
+github.com/aellwein/netcup-dns-api v1.1.0/go.mod h1:zSxP/DIqk+cWUPCmJEQnzy3dXFca5d0+KrD8pKD1CfQ=
 github.com/antlr4-go/antlr/v4 v4.13.1 h1:SqQKkuVZ+zWkMMNkjy5FZe5mr5WURWnlpmOuzYWrPrQ=
 github.com/antlr4-go/antlr/v4 v4.13.1/go.mod h1:GKmUxMtwp6ZgGwZSva4eWPC5mS6vUAmOABFgjdkM7Nw=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
