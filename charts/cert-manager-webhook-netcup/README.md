@@ -23,13 +23,30 @@ Usage
 -----
 
 For the netcup-specific configuration, you will need to create a Kubernetes
-secret, containing your customer number, API key and API password first.
+secret containing your netcup API credentials first.
 
-You can do it like following, just place the correct values in the command:
+netcup offers two APIs, and the webhook selects one based on what the secret
+contains.
+
+The **REST API** (``api.netcup.com``), used for domains on netcup's current
+DNS backend, needs only an API key:
+
+```sh
+kubectl create secret generic netcup-secret -n cert-manager --from-literal=api-key=<api-key-from-netcup-dashboard>
+```
+
+The **legacy CCP API** needs a customer number, API key and API password:
 
 ```sh
 kubectl create secret generic netcup-secret -n cert-manager --from-literal=customer-number=<your-customer-number> --from-literal=api-key=<api-key-from-netcup-dashboard> --from-literal=api-password=<api-password-from-netcup-dashboard>
 ```
+
+If ``customer-number`` and ``api-password`` are present, the legacy API is
+used; otherwise the REST API.
+
+To move an existing installation to the REST API, replace ``api-key`` with
+your REST API key and remove the other two entries. The secret is read on
+every challenge, so nothing needs restarting.
 After creating the secret, configure the ``Issuer``/``ClusterIssuer`` of
 yours to have the following configuration (as assumed, secret is
 called "netcup-secret" and located in namespace "cert-manager"):

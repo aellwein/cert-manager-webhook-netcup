@@ -9,6 +9,7 @@ import (
 	"regexp"
 	"strconv"
 
+	netcuprest "github.com/aellwein/netcup-dns-api/pkg/rest/v1"
 	netcup "github.com/aellwein/netcup-dns-api/pkg/v1"
 	extapi "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -53,6 +54,75 @@ type netcupClientConfig struct {
 	customerNumber int
 	apiKey         string
 	apiPassword    string
+	// useRestApi selects the REST API at api.netcup.com over the legacy CCP
+	// API. See netcupConfigFromSecret for how it is decided.
+	useRestApi bool
+	// restEndpoint overrides the REST API base URL. Only set in tests.
+	restEndpoint string
+}
+
+// apiName names the netcup API this configuration selected, for log messages.
+func (c *netcupClientConfig) apiName() string {
+	if c.useRestApi {
+		return "netcup REST API"
+	}
+	return "legacy netcup CCP API"
+}
+
+// netcupConfigFromSecret decides which netcup API to use from the keys the
+// secret carries. The legacy CCP API needs a customer number and an API
+// password besides the key; the REST API needs the key alone. A secret
+// carrying only 'api-key' therefore selects the REST API, and one carrying all
+// three keeps using the legacy API, so existing secrets are unaffected.
+//
+// Half a set of legacy credentials is rejected rather than quietly treated as
+// a REST configuration, which would authenticate against the wrong API and
+// fail with an unhelpful message from netcup.
+func netcupConfigFromSecret(secretData map[string][]byte) (*netcupClientConfig, error) {
+	apiKey, err := stringFromSecretData(&secretData, "api-key")
+	if err != nil {
+		return nil, fmt.Errorf("unable to get 'api-key' from secret: %v", err)
+	}
+	cfg := &netcupClientConfig{apiKey: apiKey}
+
+	customerNumber, hasCustomerNumber := secretData["customer-number"]
+	apiPassword, hasApiPassword := secretData["api-password"]
+
+	switch {
+	case !hasCustomerNumber && !hasApiPassword:
+		cfg.useRestApi = true
+		return cfg, nil
+	case !hasApiPassword:
+		return nil, fmt.Errorf(
+			"secret has 'customer-number' but no 'api-password': the legacy CCP API needs both, "+
+				"while the REST API needs neither. %s", apiKeyHint(apiKey))
+	case !hasCustomerNumber:
+		return nil, fmt.Errorf(
+			"secret has 'api-password' but no 'customer-number': the legacy CCP API needs both, "+
+				"while the REST API needs neither. %s", apiKeyHint(apiKey))
+	}
+
+	cfg.customerNumber, err = strconv.Atoi(string(customerNumber))
+	if err != nil {
+		return nil, fmt.Errorf("expected 'customer-number' to be a numeric int value, got '%s'", customerNumber)
+	}
+	cfg.apiPassword = string(apiPassword)
+	return cfg, nil
+}
+
+// apiKeyHint guesses which kind of key the secret holds from its length, for
+// use in error messages only. netcup's REST API keys are 64 characters and the
+// legacy CCP keys 50, but this is undocumented, so it never decides which API
+// is used.
+func apiKeyHint(apiKey string) string {
+	switch len(apiKey) {
+	case 64:
+		return "The key is 64 characters, which looks like a REST API key: remove 'customer-number' and 'api-password' from the secret to use the REST API."
+	case 50:
+		return "The key is 50 characters, which looks like a legacy CCP API key: add the missing key to the secret."
+	default:
+		return "Add the missing key to use the legacy CCP API, or remove both to use the REST API."
+	}
 }
 
 type netcupDNSProviderSolver struct {
@@ -75,10 +145,10 @@ func (n *netcupDNSProviderSolver) Present(ch *v1alpha1.ChallengeRequest) error {
 	if err != nil {
 		return err
 	}
-	if err := addOrDeleteTxtRecord(cfg, ch.ResolvedFQDN, ch.Key, false); err != nil {
+	if err := addOrDeleteRecord(cfg, ch.ResolvedFQDN, ch.Key, false); err != nil {
 		return err
 	}
-	klog.Infof("successfully presented challenge for domain '%s'", ch.DNSName)
+	klog.Infof("successfully presented challenge for domain '%s' via the %s", ch.DNSName, cfg.apiName())
 	return nil
 }
 
@@ -87,10 +157,10 @@ func (n *netcupDNSProviderSolver) CleanUp(ch *v1alpha1.ChallengeRequest) error {
 	if err != nil {
 		return err
 	}
-	if err := addOrDeleteTxtRecord(cfg, ch.ResolvedFQDN, ch.Key, true); err != nil {
+	if err := addOrDeleteRecord(cfg, ch.ResolvedFQDN, ch.Key, true); err != nil {
 		return err
 	}
-	klog.Infof("successfully cleaned up challenge for domain '%s'", ch.DNSName)
+	klog.Infof("successfully cleaned up challenge for domain '%s' via the %s", ch.DNSName, cfg.apiName())
 	return nil
 }
 
@@ -110,8 +180,6 @@ func (n *netcupDNSProviderSolver) getConfig(ch *v1alpha1.ChallengeRequest) (*net
 		return nil, err
 	}
 
-	netcupCfg := &netcupClientConfig{}
-
 	if cfg.SecretNamespace != "" {
 		secretNs = cfg.SecretNamespace
 	} else {
@@ -123,24 +191,67 @@ func (n *netcupDNSProviderSolver) getConfig(ch *v1alpha1.ChallengeRequest) (*net
 		return nil, fmt.Errorf("unable to get secret '%s/%s': %v", secretNs, cfg.SecretRef, err)
 	}
 
-	customerNumber, err := stringFromSecretData(&sec.Data, "customer-number")
+	netcupCfg, err := netcupConfigFromSecret(sec.Data)
 	if err != nil {
-		return nil, fmt.Errorf("unable to get 'customer-number' from secret '%s/%s': %v", secretNs, cfg.SecretRef, err)
+		return nil, fmt.Errorf("secret '%s/%s': %v", secretNs, cfg.SecretRef, err)
 	}
-	netcupCfg.customerNumber, err = strconv.Atoi(customerNumber)
-	if err != nil {
-		return nil, fmt.Errorf("expected 'customer-number' to be a numeric int value, got '%s'", customerNumber)
+	return netcupCfg, nil
+}
+
+// addOrDeleteRecord presents or removes a challenge record using whichever
+// netcup API the secret selected.
+func addOrDeleteRecord(cfg *netcupClientConfig, resolvedFqdn string, key string, delete bool) error {
+	var err error
+	if cfg.useRestApi {
+		err = addOrDeleteChallengeRecord(cfg, resolvedFqdn, key, delete)
+	} else {
+		err = addOrDeleteTxtRecord(cfg, resolvedFqdn, key, delete)
 	}
-	netcupCfg.apiKey, err = stringFromSecretData(&sec.Data, "api-key")
 	if err != nil {
-		return nil, fmt.Errorf("unable to get 'api-key' from secret '%s/%s': %v", secretNs, cfg.SecretRef, err)
+		// Nothing is logged on the failure path, so the error has to say
+		// which API it was talking to.
+		return fmt.Errorf("%s: %w", cfg.apiName(), err)
 	}
-	netcupCfg.apiPassword, err = stringFromSecretData(&sec.Data, "api-password")
+	return nil
+}
+
+// addOrDeleteChallengeRecord presents or removes a challenge through the
+// dedicated ACME endpoints of the netcup REST API.
+func addOrDeleteChallengeRecord(cfg *netcupClientConfig, resolvedFqdn string, key string, delete bool) error {
+	client := netcuprest.NewClient(cfg.apiKey, &netcuprest.ClientOptions{Endpoint: cfg.restEndpoint})
+	ctx := context.TODO()
+
+	domain, err := client.ResolveDomain(ctx, resolvedFqdn)
 	if err != nil {
-		return nil, fmt.Errorf("unable to get 'api-password' from secret '%s/%s': %v", secretNs, cfg.SecretRef, err)
+		if netcuprest.IsAuthError(err) {
+			return fmt.Errorf("the API key was rejected: %v. %s", err, apiKeyHint(cfg.apiKey))
+		}
+		return fmt.Errorf("unable to find a netcup domain for '%s': %v", resolvedFqdn, err)
+	}
+	if !domain.IsDnsManaged {
+		return fmt.Errorf(
+			"the DNS of domain '%s' is not managed through it. "+
+				"Add 'customer-number' and 'api-password' to the secret to use the legacy CCP API for this domain",
+			domain.Fqdn)
 	}
 
-	return netcupCfg, nil
+	scope, err := netcuprest.AcmeScope(resolvedFqdn, domain.Fqdn)
+	if err != nil {
+		return fmt.Errorf("unable to derive the challenge scope for '%s': %v", resolvedFqdn, err)
+	}
+
+	if delete {
+		// A record that is already gone is not an error for us.
+		if err := client.DeleteAcmeChallenge(ctx, domain.Id, scope, key); err != nil && !netcuprest.IsNotFound(err) {
+			return fmt.Errorf("failed to remove the challenge record for '%s': %v", resolvedFqdn, err)
+		}
+		return nil
+	}
+	// Adding is idempotent, so a repeated Present for the same challenge is fine.
+	if _, err := client.AddAcmeChallenge(ctx, domain.Id, scope, key); err != nil {
+		return fmt.Errorf("failed to set the challenge record for '%s': %v", resolvedFqdn, err)
+	}
+	return nil
 }
 
 func addOrDeleteTxtRecord(cfg *netcupClientConfig, resolvedFqdn string, key string, delete bool) error {
