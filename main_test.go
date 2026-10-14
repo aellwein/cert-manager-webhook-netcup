@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"strings"
@@ -119,7 +121,7 @@ const (
 
 // netcupTestServer answers the REST API calls a challenge makes. Requests it
 // does not recognise fail the test, so an unexpected call is visible.
-func netcupTestServer(t *testing.T, dnsManaged bool, record func(method string)) *httptest.Server {
+func netcupTestServer(t *testing.T, dnsManaged bool, record func(method, body string)) *httptest.Server {
 	t.Helper()
 	return httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
@@ -132,11 +134,12 @@ func netcupTestServer(t *testing.T, dnsManaged bool, record func(method string))
 			fmt.Fprintf(w, `{"success":true,"errors":[],"result":[{"id":%d,"fqdn":"example.com","isDnsManaged":%t}]}`,
 				testDomain, dnsManaged)
 		case r.Method == "POST" && r.URL.Path == fmt.Sprintf("/domain/%d/acme/challenge", testDomain):
-			record("POST")
+			body, _ := io.ReadAll(r.Body)
+			record("POST", string(body))
 			w.WriteHeader(201)
 			fmt.Fprintf(w, `{"success":true,"errors":[],"result":[{"scope":"host","fqdn":"_acme-challenge.host.example.com","value":%q,"status":"pending"}]}`, testKey)
 		case r.Method == "DELETE" && r.URL.Path == fmt.Sprintf("/domain/%d/acme/challenge/host/%s", testDomain, testKey):
-			record("DELETE")
+			record("DELETE", "")
 			w.WriteHeader(204)
 		default:
 			t.Errorf("unexpected request: %s %s", r.Method, r.URL.RequestURI())
@@ -151,7 +154,11 @@ func restConfig(endpoint string) *netcupClientConfig {
 
 func TestRestPresentCreatesTheChallengeRecord(t *testing.T) {
 	var calls []string
-	ts := netcupTestServer(t, true, func(m string) { calls = append(calls, m) })
+	var body string
+	ts := netcupTestServer(t, true, func(m, b string) {
+		calls = append(calls, m)
+		body = b
+	})
 	defer ts.Close()
 
 	if err := addOrDeleteRecord(restConfig(ts.URL), testFqdn, testKey, false); err != nil {
@@ -160,11 +167,27 @@ func TestRestPresentCreatesTheChallengeRecord(t *testing.T) {
 	if len(calls) != 1 || calls[0] != "POST" {
 		t.Errorf("calls = %v, want one POST", calls)
 	}
+	// The scope travels in the body, so this is the only place a wrong one
+	// would show up. netcup accepts any valid scope, so getting it wrong
+	// creates a record under a name nothing will ever query.
+	var sent struct {
+		Scope string `json:"scope"`
+		Value string `json:"value"`
+	}
+	if err := json.Unmarshal([]byte(body), &sent); err != nil {
+		t.Fatalf("decoding request body %q: %v", body, err)
+	}
+	if sent.Scope != "host" {
+		t.Errorf("scope = %q, want %q (from %s in example.com)", sent.Scope, "host", testFqdn)
+	}
+	if sent.Value != testKey {
+		t.Errorf("value = %q, want %q", sent.Value, testKey)
+	}
 }
 
 func TestRestCleanUpRemovesTheChallengeRecord(t *testing.T) {
 	var calls []string
-	ts := netcupTestServer(t, true, func(m string) { calls = append(calls, m) })
+	ts := netcupTestServer(t, true, func(m, _ string) { calls = append(calls, m) })
 	defer ts.Close()
 
 	if err := addOrDeleteRecord(restConfig(ts.URL), testFqdn, testKey, true); err != nil {
@@ -178,7 +201,7 @@ func TestRestCleanUpRemovesTheChallengeRecord(t *testing.T) {
 // A domain still on the legacy DNS backend cannot be managed here. The error
 // has to say what to do about it, since nothing validates the secret earlier.
 func TestRestRejectsDomainNotManagedViaRest(t *testing.T) {
-	ts := netcupTestServer(t, false, func(string) {})
+	ts := netcupTestServer(t, false, func(string, string) {})
 	defer ts.Close()
 
 	err := addOrDeleteRecord(restConfig(ts.URL), testFqdn, testKey, false)
@@ -216,7 +239,7 @@ func TestRestAuthFailureExplainsTheKeyLength(t *testing.T) {
 // A failure has to say which API it was talking to. Nothing is logged on the
 // failure path, so the error is the only place that carries it.
 func TestErrorsNameTheApiThatFailed(t *testing.T) {
-	ts := netcupTestServer(t, false, func(string) {})
+	ts := netcupTestServer(t, false, func(string, string) {})
 	defer ts.Close()
 
 	err := addOrDeleteRecord(restConfig(ts.URL), testFqdn, testKey, false)
@@ -244,5 +267,25 @@ func TestZoneLookupFailureNamesTheApi(t *testing.T) {
 	}
 	if !strings.Contains(err.Error(), "netcup REST API") {
 		t.Errorf("error %q should name the API", err)
+	}
+}
+
+// With cnameStrategy: Follow, cert-manager resolves the CNAME chain and hands
+// the webhook the target name. If that target is not an _acme-challenge
+// record, netcup's ACME endpoints cannot express it. The error has to say so,
+// because the user's mental model is "I set up CNAME delegation", not "my FQDN
+// lacks a prefix".
+func TestRestRejectsANameWithoutTheChallengePrefix(t *testing.T) {
+	ts := netcupTestServer(t, true, func(string, string) {})
+	defer ts.Close()
+
+	err := addOrDeleteRecord(restConfig(ts.URL), "validation.delegated.de.", testKey, false)
+	if err == nil {
+		t.Fatal("expected an error")
+	}
+	for _, want := range []string{"_acme-challenge", "CNAME", "cnameStrategy"} {
+		if !strings.Contains(err.Error(), want) {
+			t.Errorf("error %q should mention %q", err, want)
+		}
 	}
 }
