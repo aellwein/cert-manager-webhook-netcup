@@ -169,6 +169,24 @@ func TestIntegrationSolverPresentAndCleanUp(t *testing.T) {
 	}
 }
 
+// authoritativeNameservers returns the nameservers of the zone containing the
+// given name. NETCUP_TEST_DOMAIN may be a subdomain, which has no NS records
+// of its own, so this walks up the labels until a zone answers.
+func authoritativeNameservers(t *testing.T, name string) []*net.NS {
+	t.Helper()
+	for remainder := strings.TrimSuffix(name, "."); strings.Count(remainder, ".") >= 1; {
+		if nameservers, err := net.LookupNS(remainder); err == nil && len(nameservers) > 0 {
+			if remainder != name {
+				t.Logf("%s is not a zone apex; using the nameservers of %s", name, remainder)
+			}
+			return nameservers
+		}
+		_, remainder, _ = strings.Cut(remainder, ".")
+	}
+	t.Fatalf("no nameservers found for any zone containing %s", name)
+	return nil
+}
+
 // authoritativeResolver resolves against the given nameserver directly, so a
 // cached answer from the system resolver cannot make the test pass.
 func authoritativeResolver(nameserver string) *net.Resolver {
@@ -215,10 +233,7 @@ func TestIntegrationChallengeBecomesResolvable(t *testing.T) {
 		}
 	}
 
-	nameservers, err := net.LookupNS(domain)
-	if err != nil || len(nameservers) == 0 {
-		t.Fatalf("looking up nameservers for %s: %v", domain, err)
-	}
+	nameservers := authoritativeNameservers(t, domain)
 
 	ctx, cancel := context.WithTimeout(context.Background(), 4*time.Minute)
 	defer cancel()
