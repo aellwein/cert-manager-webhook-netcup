@@ -74,6 +74,35 @@ From that point, the issuer configured above should be able to solve
 the DNS01 challenges using ``cert-manager-webhook-netcup``.
 
 
+Domains on different netcup backends
+------------------------------------
+
+A domain is managed either through the REST API or through the legacy CCP
+API, never both, and an account can hold some of each while netcup migrates.
+Since the secret selects one API, such an account needs a separate solver or
+``Issuer`` per API, each naming its own secret and selected by ``dnsZones``.
+
+CNAME delegation
+----------------
+
+With ``cnameStrategy: Follow``, cert-manager resolves the CNAME chain itself
+and asks the webhook to write the record at the target name. The ACME
+endpoints of the REST API can only manage ``_acme-challenge`` records, so the
+target has to be one:
+
+```
+# works
+_acme-challenge.example.com.  CNAME  _acme-challenge.example-com.delegated.de.
+
+# rejected: the target carries no _acme-challenge prefix
+_acme-challenge.example.com.  CNAME  validation.delegated.de.
+```
+
+The legacy CCP API has no such restriction. A delegation to a prefix-less
+target therefore needs legacy credentials for that domain, and switching such
+a setup from legacy credentials to a REST key will stop it working.
+
+
 Disclaimer
 ----------
 
