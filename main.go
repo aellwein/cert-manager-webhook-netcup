@@ -8,6 +8,7 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"strings"
 
 	netcuprest "github.com/aellwein/netcup-dns-api/pkg/rest/v1"
 	netcup "github.com/aellwein/netcup-dns-api/pkg/v1"
@@ -126,7 +127,9 @@ func apiKeyHint(apiKey string) string {
 }
 
 type netcupDNSProviderSolver struct {
-	client *kubernetes.Clientset
+	// client is the interface rather than *kubernetes.Clientset so that the
+	// solver can be driven with a fake clientset in tests.
+	client kubernetes.Interface
 }
 
 type netcupDNSProviderConfig struct {
@@ -218,6 +221,18 @@ func addOrDeleteRecord(cfg *netcupClientConfig, resolvedFqdn string, key string,
 // addOrDeleteChallengeRecord presents or removes a challenge through the
 // dedicated ACME endpoints of the netcup REST API.
 func addOrDeleteChallengeRecord(cfg *netcupClientConfig, resolvedFqdn string, key string, delete bool) error {
+	// The ACME endpoints of the REST API can only manage _acme-challenge
+	// records. A name without that prefix usually means the challenge was
+	// CNAME-delegated to a target that does not carry it, so say that rather
+	// than let the zone lookup fail with something unrelated.
+	if !strings.HasPrefix(resolvedFqdn, netcuprest.AcmeChallengePrefix) {
+		return fmt.Errorf(
+			"'%s' is not an %s record, which is all the ACME endpoints of the netcup REST API can manage. "+
+				"This usually means the challenge was CNAME-delegated (cnameStrategy: Follow) to a target "+
+				"without the '%s' prefix. Point the CNAME at an %s name, or use legacy credentials for this domain",
+			resolvedFqdn, netcuprest.AcmeChallengePrefix, netcuprest.AcmeChallengePrefix, netcuprest.AcmeChallengePrefix)
+	}
+
 	client := netcuprest.NewClient(cfg.apiKey, &netcuprest.ClientOptions{Endpoint: cfg.restEndpoint})
 	ctx := context.TODO()
 
