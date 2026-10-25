@@ -22,6 +22,9 @@ image:
 nameOverride: ""
 fullnameOverride: ""
 
+# Annotations applied to the Deployment, not its pods.
+deploymentAnnotations: {}
+
 podSecurityContext:
   runAsUser: 10001
   runAsGroup: 10001
