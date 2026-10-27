@@ -56,7 +56,7 @@ jobs:
           auth_token: ${{ github.token }}
         run: |
           echo "${auth_token}" | ko login ghcr.io -u aellwein --password-stdin && \
-          VERSION=${{ inputs.image_tag }} KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian12 ko build -B -t ${{ inputs.image_tag }}  --platform=${{ inputs.platform }}
+          VERSION=${{ inputs.image_tag }} KO_DEFAULTBASEIMAGE=gcr.io/distroless/static-debian13 ko build -B -t ${{ inputs.image_tag }}  --platform=${{ inputs.platform }}
           docker pull ${KO_DOCKER_REPO}/cert-manager-webhook-netcup:${{ inputs.image_tag }}
           docker inspect --format='{{index .RepoDigests 0}}' ${KO_DOCKER_REPO}/cert-manager-webhook-netcup:${{ inputs.image_tag }} | sed -e 's/.*@//' > image_digest.txt
           DIGEST=$(cat image_digest.txt)

@@ -6,6 +6,6 @@ COPY . .
 ARG TARGETOS TARGETARCH
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -o webhook -ldflags '-w -extldflags "-static"' .
 
-FROM gcr.io/distroless/static-debian12
+FROM gcr.io/distroless/static-debian13
 COPY --from=build /workspace/webhook /usr/local/bin/webhook
 ENTRYPOINT ["webhook"]
