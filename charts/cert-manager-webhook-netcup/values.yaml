@@ -39,8 +39,6 @@ securityContext:
   capabilities:
     drop:
       - ALL
-    add:
-      - NET_BIND_SERVICE
 service:
   type: ClusterIP
   port: 443

@@ -14,4 +14,4 @@ jobs:
       branch: develop
       platform: linux/arm64
       image_tag: develop
-      deploy_oci_chart: false
+      deploy_oci_chart: true
