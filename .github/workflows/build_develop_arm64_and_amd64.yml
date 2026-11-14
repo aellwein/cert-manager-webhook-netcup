@@ -1,0 +1,17 @@
+name: Build Image (branch:develop - linux/amd64 + linux/arm64)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build_image:
+    uses: ./.github/workflows/build_image_for_arch.yml
+    secrets: inherit
+    with:
+      branch: develop
+      platform: linux/amd64,linux/arm64
+      image_tag: develop
+      deploy_oci_chart: true
