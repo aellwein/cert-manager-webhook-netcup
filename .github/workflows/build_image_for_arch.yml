@@ -43,6 +43,9 @@ jobs:
           go-version-file: 'go.mod'
           check-latest: true
 
+      - name: Test
+        run: go test -v ./...
+
       - name: Setup ko
         uses: ko-build/setup-ko@d006021bd0c28d1ce33a07e7943d48b079944c8d # v0.9.0
 

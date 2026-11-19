@@ -21,5 +21,8 @@ jobs:
         with:
           go-version-file: "go.mod"
 
+      - name: Test
+        run: go test -v ./...
+
       - name: Build
         run: go build ./...
