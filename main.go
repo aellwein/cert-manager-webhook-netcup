@@ -117,6 +117,8 @@ type netcupDNSProviderSolver struct {
 	// client is the interface rather than *kubernetes.Clientset so that the
 	// solver can be driven with a fake clientset in tests.
 	client kubernetes.Interface
+	// restEndpoint overrides the REST API base URL. Only set in tests.
+	restEndpoint string
 }
 
 type netcupDNSProviderConfig struct {
@@ -185,6 +187,7 @@ func (n *netcupDNSProviderSolver) getConfig(ch *v1alpha1.ChallengeRequest) (*net
 	if err != nil {
 		return nil, fmt.Errorf("secret '%s/%s': %v", secretNs, cfg.SecretRef, err)
 	}
+	netcupCfg.restEndpoint = n.restEndpoint
 	return netcupCfg, nil
 }
 
